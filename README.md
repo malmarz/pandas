@@ -6,4 +6,4 @@
 | Topic        | Link  |
 | ------------- |:-------------:| 
 | Syllabus      | [html](http://bit.ly/mis492_syl) | 
-| Introduction     | [slides](http://http://qmisr.github.io/mis492/intro.slides.html) [pdf](http://qmisr.github.io/mis492/intro.pdf)  
+| Introduction     | [slides](http://qmisr.github.io/mis492/intro.slides.html) [pdf](http://qmisr.github.io/mis492/intro.pdf)  
