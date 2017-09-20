@@ -12590,7 +12590,177 @@ Main operator types are:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Conditionals">Conditionals<a class="anchor-link" href="#Conditionals">&#182;</a></h1>
+<h1 id="Conditionals">Conditionals<a class="anchor-link" href="#Conditionals">&#182;</a></h1><p>More reading:</p>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/controlflow.html">https://docs.python.org/3/tutorial/controlflow.html</a></li>
+<li><a href="http://greenteapress.com/thinkpython2/html/thinkpython2006.html">http://greenteapress.com/thinkpython2/html/thinkpython2006.html</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/conditionals.html">http://openbookproject.net/thinkcs/python/english3e/conditionals.html</a></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conditionals">Conditionals<a class="anchor-link" href="#Conditionals">&#182;</a></h1><p>Are a way to execute instructions, only if a certain condition is met.</p>
+<p>Consists of:</p>
+<ul>
+<li>Condition</li>
+<li>Code block</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># this is the condition</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;condition 1 is true&quot;</span><span class="p">)</span> <span class="c1"># this is the code block</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is part of the code block&quot;</span><span class="p">)</span> 
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;condition 2 is true&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>condition 1 is true
+This is part of the code block
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-Syntax">The Syntax<a class="anchor-link" href="#The-Syntax">&#182;</a></h1><h2 id="required">required<a class="anchor-link" href="#required">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># code block here</span>
+<span class="k">elif</span> <span class="n">condition</span><span class="p">:</span>  <span class="c1"># optional</span>
+    <span class="c1"># code block for elif here</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># optional</span>
+    <span class="c1"># code block for else here</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Nesting">Nesting<a class="anchor-link" href="#Nesting">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># change these values to see what happens</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y is greater than 5&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y is not greater than 5&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is greater than 2&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is NOT greater than 2&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>y is greater than 5
+x is greater than 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conditions">Conditions<a class="anchor-link" href="#Conditions">&#182;</a></h1><ul>
+<li>Can be values, variables, expressions, and functions (more on that later)</li>
+<li>Expressions can be logical or arethmatic</li>
+<li>Every language has rules for what is considered True or False as a condition<ul>
+<li>e.g.: is 5 or "hello" considered true or false?</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Truths-in-Python">Truths in Python<a class="anchor-link" href="#Truths-in-Python">&#182;</a></h1><p>The following values are considered False:</p>
+<ul>
+<li>None</li>
+<li>0 (int, float, and complex)</li>
+<li>"" (empty string, no space!)</li>
+<li>[], (), {} (What are those?)</li>
+</ul>
+<h2 id="Everything-else-is-considered-True">Everything else is considered True<a class="anchor-link" href="#Everything-else-is-considered-True">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Try-statement">Try statement<a class="anchor-link" href="#Try-statement">&#182;</a></h1><ul>
+<li>Another type of conditional statements</li>
+<li>Used to execute code when a condition is met, just like if</li>
+<li>Instead of testing the condition, the program looks for the condition in a code block</li>
+<li>Used to detect unexpected errors in code<ul>
+<li>e.g.: network connection disconnects while loading data</li>
+</ul>
+</li>
+<li>more can be learned <a href="https://docs.python.org/3/tutorial/errors.html">here</a></li>
+</ul>
+
 </div>
 </div>
 </div></section></section><section><section>
@@ -12599,7 +12769,306 @@ Main operator types are:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Loops">Loops<a class="anchor-link" href="#Loops">&#182;</a></h1>
+<h1 id="Loops">Loops<a class="anchor-link" href="#Loops">&#182;</a></h1><p>For more information:</p>
+<ul>
+<li><a href="http://greenteapress.com/thinkpython2/html/thinkpython2008.html">http://greenteapress.com/thinkpython2/html/thinkpython2008.html</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/iteration.html">http://openbookproject.net/thinkcs/python/english3e/iteration.html</a></li>
+<li><a href="http://bit.ly/pyc_e2">http://bit.ly/pyc_e2</a></li>
+<li><a href="https://www.learnpython.org/en/Loops">https://www.learnpython.org/en/Loops</a></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Loops">Loops<a class="anchor-link" href="#Loops">&#182;</a></h1><ul>
+<li>Like if statements, loops perform a code block if a certain condition is met.</li>
+<li>However, the code block is repeated while the condition is true.</li>
+<li>Code block execution stops only if the condition turns false.</li>
+<li>Can you explain what an infinite loop is? is it useful or not?</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Loops-in-Python">Loops in Python<a class="anchor-link" href="#Loops-in-Python">&#182;</a></h1><p>Two types only:</p>
+<ul>
+<li><strong>while</strong> loop<ul>
+<li>This one is identical to the if statment, has a condition and a code block</li>
+</ul>
+</li>
+<li><strong>for</strong> loop<ul>
+<li>This one is available for conveniently working with elements of a data structure (e.g., list, tuples, dictionaries ..etc).</li>
+<li>We will mostly use this one</li>
+<li>Referred to as iteration</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="For-loop-syntax">For loop syntax<a class="anchor-link" href="#For-loop-syntax">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+3
+4
+5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># can you explain what this program does?</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span> == 0:
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># suggest a modification and do it</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Iterating-of-dictionary-elements">Iterating of dictionary elements<a class="anchor-link" href="#Iterating-of-dictionary-elements">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;123&quot;</span><span class="p">:</span><span class="s2">&quot;Mohammad&#39;s record&quot;</span><span class="p">,</span> <span class="s2">&quot;222&quot;</span><span class="p">:</span><span class="s2">&quot;Ali&#39;s record&quot;</span><span class="p">,</span> <span class="s2">&quot;423&quot;</span><span class="p">:</span><span class="s2">&quot;Sara&#39;s record&quot;</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">:</span> <span class="c1"># not good practice,</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># what will this print?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>123
+222
+423
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># better way of doing it</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;123&quot;</span><span class="p">:</span><span class="s2">&quot;Mohammad&#39;s record&quot;</span><span class="p">,</span> <span class="s2">&quot;222&quot;</span><span class="p">:</span><span class="s2">&quot;Ali&#39;s record&quot;</span><span class="p">,</span> <span class="s2">&quot;423&quot;</span><span class="p">:</span><span class="s2">&quot;Sara&#39;s record&quot;</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># clearly you want to iterate the keys</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>123
+222
+423
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span> <span class="c1"># clearly you want to iterate the values</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Mohammad&#39;s record
+Ali&#39;s record
+Sara&#39;s record
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># clearly you want to iterate pairs</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(&#39;123&#39;, &#34;Mohammad&#39;s record&#34;)
+(&#39;222&#39;, &#34;Ali&#39;s record&#34;)
+(&#39;423&#39;, &#34;Sara&#39;s record&#34;)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can unpack pairs</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># clearly you want to iterate pairs</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;key is </span><span class="si">{}</span><span class="s2"> and value is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">))</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>key is 123 and value is Mohammad&#39;s record
+key is 222 and value is Ali&#39;s record
+key is 423 and value is Sara&#39;s record
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Remember">Remember<a class="anchor-link" href="#Remember">&#182;</a></h1><ul>
+<li>You generally use if statements and arethmatic operators when working with single items</li>
+<li>You generally use for loops to work with all items in a list<ul>
+<li>inside the body of a loop, you generally work with a single item and tell the computer what to do with that item</li>
+</ul>
+</li>
+<li>Use type() to know what each variable holds when your programs don't run as expected.</li>
+</ul>
+
 </div>
 </div>
 </div></section></section><section><section>
@@ -12609,6 +13078,374 @@ Main operator types are:</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Useful-Python-Features">Useful Python Features<a class="anchor-link" href="#Useful-Python-Features">&#182;</a></h1><ul>
+<li>Sequence slicing and indexing<ul>
+<li>Sequences are lists, tuples, and <strong>strings!</strong></li>
+</ul>
+</li>
+<li>String manipulation</li>
+<li>List and dictionary comprehensions</li>
+<li>Built-in and 3rd party libraries</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Slicing-and-Indexing">Slicing and Indexing<a class="anchor-link" href="#Slicing-and-Indexing">&#182;</a></h1><p>See also <a href="http://bit.ly/pyc_e3">here</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
+<span class="c1"># index first element</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># index last element</span>
+<span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># What about indexing item before last?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># index the 3rd element</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get a slice starting from first element to the 3rd (inclusive)</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[5, 4, 2]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get slice from last element to the 2nd (inclusive)</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[2, 1, -1, 10]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get slice from 3rd element to the end of the list</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, -1, 10, 11]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get slice from 2nd to last element, to first</span>
+<span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[5, 4, 2, 1, -1]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># how to get a copy of a list using slicing?</span>
+
+<span class="c1"># can you think why slicing copies are important?</span>
+<span class="c1"># replace x with the following string: &quot;hello world&quot;</span>
+<span class="c1"># and perform the previous command to see what happens.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="String-manipulation">String manipulation<a class="anchor-link" href="#String-manipulation">&#182;</a></h1><p>There are neumerous features to go over in our short review, we will learn as needed.
+Please refer to the following resources for more information:</p>
+<ul>
+<li><a href="http://greenteapress.com/thinkpython2/html/thinkpython2009.html">http://greenteapress.com/thinkpython2/html/thinkpython2009.html</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-string-functions-in-python-3">https://www.digitalocean.com/community/tutorials/an-introduction-to-string-functions-in-python-3</a></li>
+<li><a href="http://bit.ly/pyc_e4">http://bit.ly/pyc_e4</a></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="List-and-dictionary-comprehension">List and dictionary comprehension<a class="anchor-link" href="#List-and-dictionary-comprehension">&#182;</a></h1><p>If you want to create a list or a dictionary, by looping over the elements of another list or dictionary, then you use list/dictionary comprehension.</p>
+<p>For examples, you have a list of numbers, and you want to create a new list containing only the even numbers.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
+<span class="c1"># to create new list of even numbers only</span>
+
+<span class="n">even_nums</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nums</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">even_nums</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[4, 2, 10]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can even perform some operations on the even numbers before storing them</span>
+<span class="c1"># for example, you want to convert them into strings</span>
+<span class="n">str_even_nums</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nums</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">str_even_nums</span>
+<span class="c1"># you can perform expressions or run functions other than str</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;4&#39;, &#39;2&#39;, &#39;10&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="More-resources-on-list/dictionary-comprehensions">More resources on list/dictionary comprehensions<a class="anchor-link" href="#More-resources-on-list/dictionary-comprehensions">&#182;</a></h1><ul>
+<li><a href="http://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html">http://python-3-patterns-idioms-test.readthedocs.io/en/latest/Comprehensions.html</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/understanding-list-comprehensions-in-python-3">https://www.digitalocean.com/community/tutorials/understanding-list-comprehensions-in-python-3</a></li>
+<li><a href="http://www.learnpython.org/en/List_Comprehensions">http://www.learnpython.org/en/List_Comprehensions</a>  </li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Python-Libraries">Python Libraries<a class="anchor-link" href="#Python-Libraries">&#182;</a></h1><ul>
+<li>Reuse what others have already written and shared</li>
+<li>Libraries in python can be:<ul>
+<li>Built-in (come with python), which is extensive!<ul>
+<li>Discover the possibilities <a href="https://docs.python.org/3/library/index.html">here</a></li>
+</ul>
+</li>
+<li>3rd party (Open Source), also extensive<ul>
+<li>You can discover them <a href="https://pypi.org">here</a></li>
+<li>Blog posts and articles might list some very useful <a href="https://wiki.python.org/moin/UsefulModules">ones</a></li>
+<li>We will use some along the way</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 </div>
 </div>
 </div></section></section><section><section>
@@ -12623,7 +13460,7 @@ Main operator types are:</p>
 <li>We will explain new things as they appear, <strong>do not be afraid to ask</strong>.</li>
 <li>Solve a single problem then move to the next. Think about the next step, not the final step.</li>
 <li>It is important to <strong>know the terms</strong> so you can type your questions in google.</li>
-<li>READ!</li>
+<li>READ AND KEEP CODING!</li>
 </ul>
 
 </div>
