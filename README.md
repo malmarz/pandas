@@ -1,5 +1,5 @@
 # QMIS 492
-## Data Analysis and Visualization
+## Data Analysis & Visualization
 
 
 
