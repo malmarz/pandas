@@ -25,3 +25,7 @@ __pycache__
 .coverage
 *.swp
 weather.csv
+*.aux
+*.log
+*.out
+*_files/
