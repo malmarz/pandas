@@ -12,5 +12,4 @@
 | 3 | Indexing, Slicing, and Manipulation| [slides](http://qmisr.github.io/mis492/week3.slides.html) -  [pdf](http://qmisr.github.io/mis492/week3.pdf) -  [notebook](http://qmisr.github.io/mis492/week3.ipynb) - [lab](http://qmisr.github.io/mis492/week3_lab.ipynb)
 | 4 | Joining and Aggregations | [slides](http://qmisr.github.io/mis492/week4.slides.html) -  [pdf](http://qmisr.github.io/mis492/week4.pdf) -  [notebook](http://qmisr.github.io/mis492/week4.ipynb) - [lab](http://qmisr.github.io/mis492/week4_lab.ipynb)
 | 5 | Visualization | [slides](http://qmisr.github.io/mis492/week5.slides.html) -  [pdf](http://qmisr.github.io/mis492/week5.pdf) -  [notebook](http://qmisr.github.io/mis492/week5.ipynb) - [lab](http://qmisr.github.io/mis492/week5_lab.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=week5_lab.ipynb)
-
 | 6 | Exploratory Data Analysis | [slides](http://qmisr.github.io/mis492/week6.slides.html) -  [pdf](http://qmisr.github.io/mis492/week6.pdf) -  [notebook](http://qmisr.github.io/mis492/week6.ipynb) - [lab](http://qmisr.github.io/mis492/week6_lab.ipynb)
