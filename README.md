@@ -18,3 +18,4 @@
 | 8 | Speaker Week - Data Vis by Dr. AlAwadhi |  [Slides](https://docs.wixstatic.com/ugd/475bfb_6f0e7779082a446fb6c828f4d23c31a0.pptx?dn=Data%20Viz_Students.pptx) [Video](https://www.youtube.com/watch?v=SSXG0OtdjRk&feature=youtu.be)
 | 8 | Speaker Week - NLP by Dr. AlBader | [Slides](https://cbaku-my.sharepoint.com/personal/zalbader_cba_edu_kw/_layouts/15/guestaccess.aspx?docid=1613a3165eedf45829f65fe5bdec08563&authkey=Ac9IuB6jTMHuci0Wt9Qvg2I&e=4%3Ac5685a7bfef34184864c9b7958b3747a) [Video](https://www.youtube.com/watch?v=2etP0DIGntE&feature=youtu.be)
 | 9 | Final Project | [Requirements](https://docs.google.com/document/d/1vAZZEyWVb0oAQ31c-8USyug_bGppjEJchA9mk5Q4TYg/edit?usp=sharing)
+| 9 | How to publish your slides | [pdf](http://qmisr.github.io/mis492/slides.pdf)
