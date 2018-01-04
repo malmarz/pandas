@@ -23,7 +23,7 @@
 
 # Final Projects
 
-- Airline complaints on SM by Yosef AlGhanim [Slides](https://nalorakq8.github.io/projects/final_project_mis492_Insights_and_questions.slides.html#/) | [Notebook](https://nalorakq8.github.io/projects/final_project_mis492_analysis.ipynb)
-- Infosec on SM by Hmoud AlGhanim and Mohammad AlTarrah [Slides](https://hfg94.github.io/mis492/TweetMaining_Analysis.slides.html) | [Notebook](https://mybinder.org/v2/gh/hfg94/mis492/master?filepath=TweetMaining_Analysis.ipynb)
-- Kuwaiti Banks on SM by Muneera AlRashid, Amna Najy, and Nedhar AlOtaibi [Slides](http://qmisr.github.io/mis492/Presentation.slides.html) | [Notebook](http://qmisr.github.io/mis492/Presentation.ipynb)
-- Reddit popular submissions by Omar AlKhayat, Eisa AlAnsari, and Ali Behbehani [Slides](http://qmisr.github.io/mis492/REDDIT.pptx) | [Notebook](http://qmisr.github.io/mis492/finalproject.ipynb)
+- Airline complaints on SM by Yosef AlGhanim [Slides](https://nalorakq8.github.io/projects/final_project_mis492_Insights_and_questions.slides.html#/) - [Notebook](https://nalorakq8.github.io/projects/final_project_mis492_analysis.ipynb)
+- Infosec on SM by Hmoud AlGhanim and Mohammad AlTarrah [Slides](https://hfg94.github.io/mis492/TweetMaining_Analysis.slides.html) - [Notebook](https://mybinder.org/v2/gh/hfg94/mis492/master?filepath=TweetMaining_Analysis.ipynb)
+- Kuwaiti Banks on SM by Muneera AlRashid, Amna Najy, and Nedhar AlOtaibi [Slides](http://qmisr.github.io/mis492/Presentation.slides.html) - [Notebook](http://qmisr.github.io/mis492/Presentation.ipynb)
+- Reddit popular submissions by Omar AlKhayat, Eisa AlAnsari, and Ali Behbehani [Slides](http://qmisr.github.io/mis492/REDDIT.pptx) - [Notebook](http://qmisr.github.io/mis492/finalproject.ipynb)
