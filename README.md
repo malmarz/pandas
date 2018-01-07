@@ -21,7 +21,7 @@
 | 9 | How to publish your slides | [pdf](http://qmisr.github.io/mis492/slides.pdf)
 | 10 | Tips on using tweepy | [notebook](http://qmisr.github.io/mis492/tweeps_tips.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=tweeps_tips.ipynb)
 
-## Special thanks
+# Special thanks
 to Datacamp.com for providing the online content free to our students which they utilized to learn more about advanced topics such as NLP and ML to apply in their projects.
 
 # Final Projects
