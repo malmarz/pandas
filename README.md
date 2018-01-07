@@ -21,9 +21,12 @@
 | 9 | How to publish your slides | [pdf](http://qmisr.github.io/mis492/slides.pdf)
 | 10 | Tips on using tweepy | [notebook](http://qmisr.github.io/mis492/tweeps_tips.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=tweeps_tips.ipynb)
 
+## Special thanks
+to Datacamp.com for providing the online content free to our students which they utilized to learn more about advanced topics such as NLP and ML to apply in their projects.
+
 # Final Projects
 
-- Airline complaints on SM by Yosef AlGhanim [Slides](https://nalorakq8.github.io/projects/final_project_mis492_Insights_and_questions.slides.html#/) - [Notebook](https://nalorakq8.github.io/projects/final_project_mis492_analysis.ipynb) - [Video](https://youtu.be/Hw3YFZM2KZg)
-- Infosec on SM by Hmoud AlGhanim and Mohammad AlTarrah [Slides](https://hfg94.github.io/mis492/TweetMaining_Analysis.slides.html) - [Notebook](https://mybinder.org/v2/gh/hfg94/mis492/master?filepath=TweetMaining_Analysis.ipynb) - [Video](https://www.youtube.com/watch?v=nz_Jbsk_-ok)
-- Kuwaiti Banks on SM by Muneera AlRashaid, Amna Najy, and Nedhar AlOtaibi [Slides](http://qmisr.github.io/mis492/Presentation.slides.html) - [Notebook](http://qmisr.github.io/mis492/Presentation.ipynb) - [Video](https://www.youtube.com/watch?v=9gwpOQ3LxrM&t=24s)
-- Reddit popular submissions by Omar AlKhayat, Eisa AlAnsari, and Ali Behbehani [Slides](http://qmisr.github.io/mis492/REDDIT.pptx) - [Notebook](http://qmisr.github.io/mis492/finalproject.ipynb) - [Video](https://www.youtube.com/watch?v=iJtai0t7Syg)
+- Airline complaints on SM by Yosef AlGhanim [Slides](https://nalorakq8.github.io/projects/final_project_mis492_Insights_and_questions.slides.html#/) - [Notebook](https://nalorakq8.github.io/projects/final_project_mis492_analysis.ipynb)
+- Infosec on SM by Hmoud AlGhanim and Mohammad AlTarrah [Slides](https://hfg94.github.io/mis492/TweetMaining_Analysis.slides.html) - [Notebook](https://mybinder.org/v2/gh/hfg94/mis492/master?filepath=TweetMaining_Analysis.ipynb)
+- Kuwaiti Banks on SM by Muneera AlRashaid, Amna Najy, and Nedhar AlOtaibi [Slides](http://qmisr.github.io/mis492/Presentation.slides.html) - [Notebook](http://qmisr.github.io/mis492/Presentation.ipynb)
+- Reddit popular submissions by Omar AlKhayat, Eisa AlAnsari, and Ali Behbehani [Slides](http://qmisr.github.io/mis492/REDDIT.pptx) - [Notebook](http://qmisr.github.io/mis492/finalproject.ipynb)
