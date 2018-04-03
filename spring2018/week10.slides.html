@@ -36,7 +36,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -67,8 +67,8 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1163,6 +1163,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2591,6 +2592,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3081,6 +3083,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8811,9 +8814,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -9016,14 +9016,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -9046,16 +9040,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9192,9 +9176,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9284,9 +9265,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9331,9 +9309,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9630,7 +9605,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9651,6 +9625,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11321,7 +11300,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11633,7 +11612,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11647,9 +11625,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11710,10 +11685,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11724,11 +11697,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11776,6 +11747,7 @@ ul.typeahead-list > li > a {
 /* Overrides of notebook CSS for static HTML export */
 .reveal {
   font-size: 160%;
+  overflow-y: scroll;
 }
 .reveal pre {
   width: inherit;
@@ -11805,41 +11777,6 @@ ul.typeahead-list > li > a {
 }
 .reveal .progress {
   position: static;
-}
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-left.enabled {
-  border-right-color: #727272;
-}
-.reveal .controls .navigate-left.enabled:hover,
-.reveal .controls .navigate-left.enabled.enabled:hover {
-  border-right-color: #dfdfdf;
-}
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled {
-  border-left-color: #727272;
-}
-.reveal .controls .navigate-right.enabled:hover,
-.reveal .controls .navigate-right.enabled.enabled:hover {
-  border-left-color: #dfdfdf;
-}
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-up.enabled {
-  border-bottom-color: #727272;
-}
-.reveal .controls .navigate-up.enabled:hover,
-.reveal .controls .navigate-up.enabled.enabled:hover {
-  border-bottom-color: #dfdfdf;
-}
-.reveal .controls .navigate-down,
-.reveal .controls .navigate-down.enabled {
-  border-top-color: #727272;
-}
-.reveal .controls .navigate-down.enabled:hover,
-.reveal .controls .navigate-down.enabled.enabled:hover {
-  border-top-color: #dfdfdf;
-}
-.reveal .progress span {
-  background: #727272;
 }
 div.input_area {
   padding: 0.06em;
@@ -11874,19 +11811,6 @@ a.anchor-link {
 .rendered_html p {
   text-align: inherit;
 }
-::-webkit-scrollbar
-{
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar *
-{
-  background:transparent;
-}
-::-webkit-scrollbar-thumb
-{
-  background: #727272 !important;
-}
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
@@ -11901,15 +11825,8 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 <section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="MIS-492---Data-Analysis-and-Visualization">MIS 492 - Data Analysis and Visualization<a class="anchor-link" href="#MIS-492---Data-Analysis-and-Visualization">&#182;</a></h1><h2 id="Week-10">Week 10<a class="anchor-link" href="#Week-10">&#182;</a></h2><h2 id="Internet-Data-Collection">Internet Data Collection<a class="anchor-link" href="#Internet-Data-Collection">&#182;</a></h2><h3 id="Dr.-Mohammad-AlMarzouq">Dr. Mohammad AlMarzouq<a class="anchor-link" href="#Dr.-Mohammad-AlMarzouq">&#182;</a></h3>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11930,7 +11847,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11944,7 +11862,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12009,11 +11928,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[3]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12056,7 +11971,8 @@ a.anchor-link {
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12070,7 +11986,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12132,11 +12049,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[21]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12179,7 +12092,8 @@ a.anchor-link {
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12209,11 +12123,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[22]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12256,7 +12166,8 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12282,11 +12193,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[23]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12335,7 +12242,8 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12350,7 +12258,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12367,7 +12276,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12386,7 +12296,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12403,7 +12314,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12425,7 +12337,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12479,11 +12392,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[26]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12513,11 +12422,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[27]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12550,11 +12455,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[32]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -18682,11 +18583,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[33]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -18775,11 +18672,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[34]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -18822,11 +18715,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[37]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -19244,11 +19133,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[38]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -19640,7 +19525,8 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -19660,7 +19546,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -19713,7 +19600,8 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -19755,11 +19643,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[46]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[46]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -20031,11 +19915,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[70]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[70]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -20048,7 +19928,8 @@ a.anchor-link {
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -20117,11 +19998,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[87]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[87]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -20150,11 +20027,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[100]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[100]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -20310,11 +20183,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[101]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[101]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -20470,11 +20339,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[102]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[102]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -20614,7 +20479,8 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -20627,7 +20493,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -20641,7 +20508,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -20658,7 +20526,8 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -20673,32 +20542,31 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Beautiful-Soup">Beautiful Soup<a class="anchor-link" href="#Beautiful-Soup">&#182;</a></h1><p>Used easily pick information from an HTML or XML document</p>
+<h1 id="Requests-HTML:-HTML-Parsing-for-Humans">Requests-HTML: HTML Parsing for Humans<a class="anchor-link" href="#Requests-HTML:-HTML-Parsing-for-Humans">&#182;</a></h1><p>Used easily pick information from an HTML or XML document</p>
 <p>Install using:</p>
-<p><code>pip install beautifulsoup4</code></p>
+<p><code>pip install requests_html</code></p>
 
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">BS</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># loading a website</span>
+<span class="kn">from</span> <span class="nn">requests_html</span> <span class="k">import</span> <span class="n">HTMLSession</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">HTMLSession</span><span class="p">()</span>
 
-<span class="c1"># Load html page using requests</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://www.alanba.com.kw/newspaper/&quot;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://www.alanba.com.kw/newspaper/&quot;</span><span class="p">)</span>
 
-<span class="c1"># Parse the text of the webpage using BS</span>
-<span class="n">bs</span> <span class="o">=</span> <span class="n">BS</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-
-<span class="c1"># Now examine the page using the developer toolt to find the tags and attributes you need</span>
+<span class="c1"># The data for the website is now stored in r</span>
+<span class="c1"># You perform operations on r to get the data you want</span>
 </pre></div>
 
 </div>
@@ -20706,7 +20574,704 @@ a.anchor-link {
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Requests-HTML-already-provides-some-useful-functions">Requests-HTML already provides some useful functions<a class="anchor-link" href="#Requests-HTML-already-provides-some-useful-functions">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get the links</span>
+<span class="n">r</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">links</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;/aboutus/ar/&#39;,
+ &#39;/aboutus/en/&#39;,
+ &#39;/alwafiyat/&#39;,
+ &#39;/anbavideo/&#39;,
+ &#39;/ar/arabic-international-news/&#39;,
+ &#39;/ar/arabic-international-news/823216/03-04-2018-إيران-احتجاجات-الأهواز-تتواصل-لليوم-السادس-والسلطات-تحولها-إلى-ثكنة-عسكرية&#39;,
+ &#39;/ar/arabic-international-news/823218/03-04-2018-ترامب-للكونغرس-استخدموا-الخيار-النووي-لإقرار-قانون-الهجرة&#39;,
+ &#39;/ar/arabic-international-news/823219/03-04-2018-الفلسطينيون-يتوجهون-إلى-مجلس-الأمن-طلبا-للحماية-الدولية&#39;,
+ &#39;/ar/arabic-international-news/823220/03-04-2018-بالفيديو-كوستاريكا-فوز-مرشح-الحزب-الحاكم-بالانتخابات-الرئاسية&#39;,
+ &#39;/ar/arabic-international-news/egypt-news/&#39;,
+ &#39;/ar/arabic-international-news/egypt-news/823179/03-04-2018-البرلمان-المصري-يوافق-انشاء-مجلس-أعلى-لمواجهة-الارهاب-والتطرف&#39;,
+ &#39;/ar/arabic-international-news/egypt-news/823234/03-04-2018-عبدالغني-لـ-الأنباء-تفرقة-بين-أبناء-مصر-الداخل-والخارج-الحصول-الوحدات-السكنية&#39;,
+ &#39;/ar/arabic-international-news/lebanon-news/&#39;,
+ &#39;/ar/arabic-international-news/lebanon-news/823204/03-04-2018-سكينة-سياسية-إلى-بعد-مؤتمر-باريس-نهاية-الأسبوع&#39;,
+ &#39;/ar/arabic-international-news/lebanon-news/823205/03-04-2018-مخيبر-لـ-الأنباء-قانون-الانتخاب-مربك-جدا-للمرشحين-وللناخبين-معا&#39;,
+ &#39;/ar/arabic-international-news/reports-and-issues/&#39;,
+ &#39;/ar/arabic-international-news/syria-news/&#39;,
+ &#39;/ar/arabic-international-news/syria-news/823202/03-04-2018-الحافلات-تبدأ-الخروج-دوما-وجيش-الإسلام-يتمسك-بنفي-الاتفاق&#39;,
+ &#39;/ar/art-news/&#39;,
+ &#39;/ar/art-news/823108/03-04-2018-زين-تختتم-رعايتها-البلاتينية-للموسم-الثالث-برنامج-حمد-شو&#39;,
+ &#39;/ar/art-news/823109/03-04-2018-شيماء-سبت-الحروب-أبعدتني-الدراما&#39;,
+ &#39;/ar/art-news/823110/03-04-2018-الرسام-ولويس-الجمعة-صالة-التزلج&#39;,
+ &#39;/ar/art-news/823114/03-04-2018-للمرة-الأولى-شيرين-تقع-فخ-رامز&#39;,
+ &#39;/ar/art-news/823115/03-04-2018-راشد-الماجد-يطرح-أكثر-شخص-بالدنيا&#39;,
+ &#39;/ar/art-news/823117/03-04-2018-سنتربوينت-تتعاون-أنغامي-لإطلاق-موسم-جديد-الجلسات-الفنية-لدعم-المواهب-الناشئة&#39;,
+ &#39;/ar/art-news/823290/04-04-2018-بالفيديو-والصورهكذا-احتفلت-أمل-العوضي-بميلادها-وهذا-عمرها-الحقيقي/&#39;,
+ &#39;/ar/art-news/arabic-international/&#39;,
+ &#39;/ar/art-news/arabic-international/823111/03-04-2018-جيني-إسبر-تستعد-للارتباط-بأمير-عربي&#39;,
+ &#39;/ar/art-news/arabic-international/823113/03-04-2018-حظر-تجوال-لإلهام-شاهين-وأمينة-خليل&#39;,
+ &#39;/ar/art-news/arabic-international/823278/04-04-2018-منشور-يشعل-النار-بين-أحلام-وإليسا-والرد-تغريدة/&#39;,
+ &#39;/ar/art-news/arabic-international/823281/04-04-2018-الفنان-محمد-عبده-يغنى-الهواء-احتفالا-بفوز-السيسى-بولاية-رئاسية-ثانية/&#39;,
+ &#39;/ar/art-news/arabic-international/823286/04-04-2018-بالصور-هذا-سعر-جاكيت-نانسي-عجرم-فيديو-كليبها-الجديد-الذي-شغل-مواقع-التواصل-الاجتماعي-\u200e/&#39;,
+ &#39;/ar/art-news/arabic-international/823288/04-04-2018-بالفيديو-نجمة-عربية-تعترف-للمرة-الأولى-تعرضها-للتحرش-خلال-حملها/&#39;,
+ &#39;/ar/art-news/arabic-international/823295/04-04-2018-براد-بيت-وأنجلينا-جولي-يقرران-إنهاء-إجراءات-الطلاق&#39;,
+ &#39;/ar/art-news/arabic-international/823297/04-04-2018-فنانة-سورية-شهيرة-تتعرض-لنوبة-قلبية-مفاجئة-وهذا-وضعها-الصحي-الآن&#39;,
+ &#39;/ar/art-news/arabic-international/823306/04-04-2018-بالفيديو-تحولت-ليلى-غفران-إلى-شبيهة-هيفا-وهبي&#39;,
+ &#39;/ar/art-news/remote-control/&#39;,
+ &#39;/ar/art-news/scenes/&#39;,
+ &#39;/ar/celebrity-tweek/823240/03-04-2018-هل-سيبعث-المسيح-جديد-سئوال-يثير-جدلا-و-ماذا-قالت-أوبرا-وينفري-معجبيهاوماذا-قالت-نجمة-هوليوود-بعد-الإصابة-بالألزهايمر/&#39;,
+ &#39;/ar/economy-news/&#39;,
+ &#39;/ar/economy-news/823129/03-04-2018--ملايين-دولار-أرباح-أهم-منصات-العملات-الرقمية-يوميا&#39;,
+ &#39;/ar/economy-news/823131/03-04-2018-تراجعات-البورصة-ارتباك-وتساؤلات&#39;,
+ &#39;/ar/economy-news/823132/03-04-2018-العذبي-استكشاف-العراق-للنفط-أراضيه-ليس-ضمن-الحقول-المشتركة&#39;,
+ &#39;/ar/economy-news/823132/03-04-2018-العذبي-استكشاف-العراق-للنفط-أراضيه-ليس-ضمن-المنطقة-المشتركة&#39;,
+ &#39;/ar/economy-news/823133/03-04-2018-المتكاملة-القابضة-أول-الإدراجات-العائلية-بالبورصة&#39;,
+ &#39;/ar/economy-news/823134/03-04-2018-الخرافي-انفراجة-متوقعة-للأراضي-الصناعية-نهاية-&#39;,
+ &#39;/ar/economy-news/823135/03-04-2018-الكويت-للتأمين-قادرون-تغطية-تعويضات-حادثة-الأرتال&#39;,
+ &#39;/ar/economy-news/business-and-markets/&#39;,
+ &#39;/ar/economy-news/energy-oil-petroleum/&#39;,
+ &#39;/ar/economy-news/real-estates/&#39;,
+ &#39;/ar/economy-news/reports/&#39;,
+ &#39;/ar/exclusive-reports/&#39;,
+ &#39;/ar/kuwait-community/&#39;,
+ &#39;/ar/kuwait-community/823102/03-04-2018-انطلاق-معرض-الكويت-الطبي-برعاية-وزارة-الصحة-اليوم&#39;,
+ &#39;/ar/kuwait-community/823103/03-04-2018-قدم-بلا-ألم-حملة-توعوية-مستشفيات-الكويت-لرفع-الوعي-بمرض-التهاب-الأعصاب-الطرفية&#39;,
+ &#39;/ar/kuwait-community/823104/03-04-2018-المنفوحي-يفتتح-مؤتمر-ومعرض-الكويت-السابع-للمباني-الخضراء-غدا&#39;,
+ &#39;/ar/kuwait-community/823106/03-04-2018-بيتك-يطلق-النسخة-الرابعة-تطبيق-القرآن-الكريم-بخصائص-مميزة&#39;,
+ &#39;/ar/kuwait-community/exhibitions-and-forums/&#39;,
+ &#39;/ar/kuwait-community/occasions-events/&#39;,
+ &#39;/ar/kuwait-community/occasions-events/823107/03-04-2018-بالفيديو-دار-الوفاء-الأنباء-تحتفي-بكوكبة-قدامى-العاملين-بها-ممن-أمضوا-أكثر-عاما-الخدمة/&#39;,
+ &#39;/ar/kuwait-news/&#39;,
+ &#39;/ar/kuwait-news/823166/03-04-2018-بالفيديو-أبل-نعمل-لتمديد-صلاحية-شهادات-الإعاقة-لـ-سنوات&#39;,
+ &#39;/ar/kuwait-news/823167/03-04-2018-المطوع-دمج-ذوي-الإعاقة-مختلف-المجالات&#39;,
+ &#39;/ar/kuwait-news/823174/03-04-2018-الخلف-علينا-معالجة-سلبيات-العولمة-وما-تدعو-إليه-انفلات&#39;,
+ &#39;/ar/kuwait-news/823175/03-04-2018-بالفيديو-الروضان-قسائم-صناعية-للشباب-لإقامة-مشاريع-صغيرة-ومتوسطة&#39;,
+ &#39;/ar/kuwait-news/823180/03-04-2018-بالفيديو-الحصان-تابع-تركيب-آخر-قطعة-خرسانة-وصلة-الدوحة-نسبة-الإنجاز-جسر-جابر&#39;,
+ &#39;/ar/kuwait-news/823190/03-04-2018-بالفيديو-الأحمد-مصانع-جديدة-المنطقة-الجنوبية-وتقليص-موسم-التخييم-مجددا-وارد&#39;,
+ &#39;/ar/kuwait-news/823224/03-04-2018-الراشد-حرص-كويتي-التواصل-مختلف-مدن-العراق&#39;,
+ &#39;/ar/kuwait-news/823245/03-04-2018-توظيف-مواطن-منهم-تربوي-فورا&#39;,
+ &#39;/ar/kuwait-news/823245/03-04-2018-توظيف-مواطن-منهم-تربوي-فورا/&#39;,
+ &#39;/ar/kuwait-news/823262/03-04-2018-مجلس-الأمة-يصوت-بالموافقة-الديوان-الوطني-لحقوق-الإنسان-بمداولته-الثانية-ويحيله-إلى-الحكومة/&#39;,
+ &#39;/ar/kuwait-news/823264/04-04-2018-توجه-لجلب-العمالة-المنزلية-الهند-وفيتنام/&#39;,
+ &#39;/ar/kuwait-news/823265/04-04-2018-محافظ-البصرة-أملاك-الكويتيين-لدينا-محفوظة-لهم-ولا-يمكن-التلاعب-بها/&#39;,
+ &#39;/ar/kuwait-news/823271/04-04-2018-الروضان-تحديد-تكلفة-العمالة-بـ-دينارا-ليس-نهائيا/&#39;,
+ &#39;/ar/kuwait-news/823272/04-04-2018-الأنباء-تنشر-أسماء-دفعة-جديدة-رشحها-ديوان-الخدمة-للعمل-لدى-الجهات-الحكومية&#39;,
+ &#39;/ar/kuwait-news/823272/04-04-2018-الأنباء-تنشر-أسماء-دفعة-جديدة-رشحها-ديوان-الخدمة-للعمل-لدى-الجهات-الحكومية/&#39;,
+ &#39;/ar/kuwait-news/advertising/&#39;,
+ &#39;/ar/kuwait-news/complaints/&#39;,
+ &#39;/ar/kuwait-news/education/&#39;,
+ &#39;/ar/kuwait-news/education/823088/03-04-2018-بالفيديو-سيلفرمان-برامج-لزيادة-أعداد-الطلبة-الكويتيين-الدارسين-الجامعات-الأميركية&#39;,
+ &#39;/ar/kuwait-news/education/823194/03-04-2018-التربية-لموظفي-البيئة-حق-دخول-كل-الأماكن-والاستعانة-برجال-الشرطة-إذا-اقتضى-الأمر&#39;,
+ &#39;/ar/kuwait-news/education/823194/03-04-2018-التربية-لموظفي-البيئة-حق-دخول-كل-الأماكن-والاستعانة-برجال-الشرطة-إذا-اقتضى-الأمر/&#39;,
+ &#39;/ar/kuwait-news/health/&#39;,
+ &#39;/ar/kuwait-news/incidents-issues/&#39;,
+ &#39;/ar/kuwait-news/incidents-issues/823207/03-04-2018-نجاة-أطفال-افتراس-كلب-ضال&#39;,
+ &#39;/ar/kuwait-news/incidents-issues/823210/03-04-2018-أربعيني-القيروان-إلى-التنفيذ-المدني&#39;,
+ &#39;/ar/kuwait-news/incidents-issues/823211/03-04-2018-استقبال-طلبات-جواز-السفر-الإلكتروني-موقع-الداخلية-حتى-نهاية-يوليو&#39;,
+ &#39;/ar/kuwait-news/incidents-issues/823213/03-04-2018-الداخلية-عدم-الالتزام-بقواعد-المرور-السبب-الحادث&#39;,
+ &#39;/ar/kuwait-news/islamic-faith/&#39;,
+ &#39;/ar/kuwait-news/municipal-council/&#39;,
+ &#39;/ar/kuwait-news/municipal-council/823085/03-04-2018-إنذار-لإخلاء-سكن-عزابفي-الرقة&#39;,
+ &#39;/ar/kuwait-news/municipal-council/823087/03-04-2018-إزالة-محلا-مخالفا-العاصمة&#39;,
+ &#39;/ar/kuwait-news/official/&#39;,
+ &#39;/ar/kuwait-news/official/823222/03-04-2018-بالفيديو-الأمير-بحث-رئيس-جزر-القمر-التعاون-الثنائي-والقضايا-المشتركة/&#39;,
+ &#39;/ar/kuwait-news/official/823263/03-04-2018-الأمير-يرعى-ويحضر-الأوبريت-الوطني-عجيبة-هالديرةغدا/&#39;,
+ &#39;/ar/kuwait-news/parliament/&#39;,
+ &#39;/ar/kuwait-news/parliament/823162/03-04-2018-بالفيديو-حقوق-الإنسان-العفو-الأميري-الأكبر-منذ-سنوات/&#39;,
+ &#39;/ar/kuwait-news/parliament/823195/03-04-2018-المويزري-يطالب-الغانم-بتهيئة-الظروف-لمناقشة-شكواه-جلسة-اليوم&#39;,
+ &#39;/ar/kuwait-news/parliament/823198/03-04-2018-الحويلة-لوزير-الصحة-إجراءاتكم-القانونية-تجاه-عيادة-طبية-غير-المرخص-لها&#39;,
+ &#39;/ar/kuwait-news/parliament/823199/03-04-2018-عاشور-يسأل-وزيرة-الشؤون-المقار-غير-المرخصة-للجمعيات-والمبرات-الخيرية&#39;,
+ &#39;/ar/kuwait-news/parliament/823201/03-04-2018-الكندري-لوزير-الصحة-إجراءاتكم-لدعم-الصيادلة-الكويتيين&#39;,
+ &#39;/ar/kuwait-news/usa-students/&#39;,
+ &#39;/ar/last/&#39;,
+ &#39;/ar/last/823045/03-04-2018-بالفيديو-نهاية-غير-سعيدة-للصوص-حاولوا-سرقة-متجر-الإمارات&#39;,
+ &#39;/ar/last/823048/03-04-2018-بالفيديو-سائق-شاحنة-حالة-غير-طبيعية-يقود-بتهور-ويصدم-عددا-السيارات-بالسعودية&#39;,
+ &#39;/ar/last/823050/03-04-2018-فيديو-صادم-اعتداء-وحشي-محجبة-مستشفى-اميركي&#39;,
+ &#39;/ar/last/823053/03-04-2018-بالفيديوكيف-تعاملت-هذه-الموظفة-حقائب-المسافرين-بأحد-مطارات-اليابان&#39;,
+ &#39;/ar/last/823054/03-04-2018-بالفيديو-ممثلة-مصرية-بوضع-صحي-دقيق-وتصرخ-فيسبوك-إلحقوني-بموت&#39;,
+ &#39;/ar/last/823056/03-04-2018-بالفيديو-خادم-مسجد-مصر-يقيم-عزاء-لكلب-شارع-ويكرس-حياته-لخدمة-الحيوانات&#39;,
+ &#39;/ar/last/823239/03-04-2018-بالفيديو-أول-كهف-ملحي-بالأردن-يقدم-لرواده-الطاقة-الإيجابية&#39;,
+ &#39;/ar/last/823279/04-04-2018-بالفيديو-امرأة-معطف-الفرو-تأخذ-صورة-دب-وسط-الثلج-تستفز-المتابعين/&#39;,
+ &#39;/ar/last/823284/04-04-2018-شاهد-البذخ-ثم-البذخ-هكذا-احتفلت-عائلة-كارداشيان-بعيد-الفصح/&#39;,
+ &#39;/ar/last/823285/04-04-2018-صورة-رضيع-تجتاح-مواقع-التواصل-الاجتماعي-والسبب/&#39;,
+ &#39;/ar/last/823294/04-04-2018-تحذير-انفجار-الكون-الوقت-أقرب-مما-توقع-العلماء&#39;,
+ &#39;/ar/last/823302/04-04-2018-مدفن-أعظم-مدينة-بالتاريخ-ذكرها-القرآن-هذا-المكان&#39;,
+ &#39;/ar/last/823303/04-04-2018-بالفيديو-ابتكار-جديد-لتحديد-لحية-الرجال-بدقة&#39;,
+ &#39;/ar/literature-and-culture/&#39;,
+ &#39;/ar/literature-and-culture/faces-in-the-light/&#39;,
+ &#39;/ar/literature-and-culture/from-the-past/&#39;,
+ &#39;/ar/opinion/&#39;,
+ &#39;/ar/sport-news/&#39;,
+ &#39;/ar/sport-news/823143/03-04-2018-الاتحاد-يقسو-الباطن-ويبلغ-نهائي-كأس-الملك&#39;,
+ &#39;/ar/sport-news/823144/03-04-2018-بطولة-بولينغ-للبنات-ذوي-الاحتياجات-الخاصة&#39;,
+ &#39;/ar/sport-news/823147/03-04-2018-Bentley-Bentayga-تنافس-سباق-بايكس-بيك&#39;,
+ &#39;/ar/sport-news/823149/03-04-2018-السلطان-دعم-محدود-لبطولة-سلوى-الصباح&#39;,
+ &#39;/ar/sport-news/823156/03-04-2018-كأس-الطائرة-بين-الكويت-وكاظمة&#39;,
+ &#39;/ar/sport-news/823157/03-04-2018-يد-العميد-وكاظمة-معركة-الكبار&#39;,
+ &#39;/ar/sport-news/823158/03-04-2018-الخالدي-نادر-ومرزوق-يغيبان-مواجهة-البرتقالي&#39;,
+ &#39;/ar/sport-news/823160/03-04-2018-العسعوسي-مشكلة-كاظمة-عدم-استغلال-الفرص&#39;,
+ &#39;/ar/sport-news/arabic-sports/&#39;,
+ &#39;/ar/sport-news/arabic-sports/823146/03-04-2018-أهلي-جدة-لحسم-التأهل-أمام-تراكتور-والوحدة-لتجاوز-لوكومتيف&#39;,
+ &#39;/ar/sport-news/arabic-sports/823148/03-04-2018-بدلاء-الفراعنة-فرصة-أخيرة-بتجربة-الكويت&#39;,
+ &#39;/ar/sport-news/gulfcup/&#39;,
+ &#39;/ar/sport-news/world-sports/&#39;,
+ &#39;/ar/sport-news/world-sports/823182/03-04-2018-مباريات-ذهاب-ربع-نهائي-أبطال-أوروبا-حصريا-علىbeIN&#39;,
+ &#39;/ar/sport-news/world-sports/823183/03-04-2018-أتلتيكو-يعزز-وصافته-الليغا&#39;,
+ &#39;/ar/sport-news/world-sports/823187/03-04-2018-اليوفي-والريالملحمة-الثأر-تورينو&#39;,
+ &#39;/ar/sport-news/world-sports/823282/04-04-2018-رسميا-فيفا-يهدد-اللاعب-محمد-صلاح-بالاستبعاد-المونديال-وغليان-مصري/&#39;,
+ &#39;/ar/variety-news/&#39;,
+ &#39;/ar/variety-news/alanba-photo/&#39;,
+ &#39;/ar/variety-news/entertainment/&#39;,
+ &#39;/ar/variety-news/kitchen-cooking/&#39;,
+ &#39;/ar/variety-news/life-style/&#39;,
+ &#39;/ar/variety-news/marine/&#39;,
+ &#39;/ar/variety-news/shawared/&#39;,
+ &#39;/ar/world-news/&#39;,
+ &#39;/ar/world-news/823046/03-04-2018-بالفيديو-أسد-أبيض-ينقض-حافلة-طلاب-خلال-رحلة-سفاري&#39;,
+ &#39;/ar/world-news/823047/03-04-2018-بالفيديو-كابتن-طائرة-يقبل-الأرض-بعد-هبوط-اضطراري-خطر&#39;,
+ &#39;/ar/world-news/823049/03-04-2018-كلمات-تتوقعها-محظورة-العائلة-الملكية-ببريطانيا&#39;,
+ &#39;/ar/world-news/823058/03-04-2018-بعد-أيام-الطلاق-شهر-العسل-نجمة-مصرية-ثانية-تكشف-طلاقها-سرا-زوجها&#39;,
+ &#39;/ar/world-news/823059/03-04-2018-مفاجأة-واتساب-ميزة-لطالما-انتظرناها&#39;,
+ &#39;/ar/world-news/823062/03-04-2018-أغرب-أخبار-حقيقية-ظنها-البعض-كذبة-أبريل&#39;,
+ &#39;/ar/world-news/823063/03-04-2018-حاولت-خنق-طفليها-فقتلت-أحدهما-دماغيا&#39;,
+ &#39;/ar/world-news/823065/03-04-2018-بالفيديو-لحظة-صدم-سيارة-لـ-عربة-يجرها-حصان-والإطاحة-بركابها&#39;,
+ &#39;/ar/world-news/823067/03-04-2018-بالصور-قرد-يخطف-رضيعا-جوار-أمه-الهند&#39;,
+ &#39;/ar/world-news/823068/03-04-2018-المغرب-مشروع-قانون-لإخصاء-المغتصبين-جراحيا&#39;,
+ &#39;/ar/world-news/823072/03-04-2018-صور-مؤثرة-لابنة-وحفيدة-وحيد-القرن-الأبيض-الأخير&#39;,
+ &#39;/ar/world-news/823073/03-04-2018-جوليا-بسترانا-أقبح-امرأة-العالم-عانت-حتى-بعد-وفاتها-بـ-عاما&#39;,
+ &#39;/ar/world-news/823074/03-04-2018-فيديو-لحريق-تسبب-بتعليق-حركة-الطيران-بمطار-لندن&#39;,
+ &#39;/ar/world-news/823076/03-04-2018-بالفيديو-مقتل-شاب-كمين-بلاي-شتيشن&#39;,
+ &#39;/ar/world-news/823238/03-04-2018-بالفيديو-متحف-لصور-السيلفي-لوس-أنجيليس&#39;,
+ &#39;/ar/world-news/823280/04-04-2018-فيديو-لطالب-يمني-جامعي-بالهند-ضربوه-وسحلوه-بهجوم-جماعي/&#39;,
+ &#39;/ar/world-news/823283/04-04-2018-فيديو-منفر-لطفلة-لبنانية-تدخن-بمباركة-والديها/&#39;,
+ &#39;/ar/world-news/823287/04-04-2018-مفاجأة-رحيل-روائي-مصري-شهير-تنبأ-بموعد-وتاريخ-وفاته-فى-روايته/&#39;,
+ &#39;/ar/world-news/823289/04-04-2018-بالفيديو-بلدية-دبي-تكشف-حقيقة-الفيديو-المتداول-عنالبيض-البلاستيكي-/&#39;,
+ &#39;/ar/world-news/823296/04-04-2018-هل-وقفت-يوما-أمام-جهاز-لتنقية-الهواء-ثم-ترددت-شرائه-بسبب-سعره-حسنا-فعلت،-الحل-هذه-النبتة&#39;,
+ &#39;/ar/world-news/823298/04-04-2018-وقائع-إنقاذ-طفل-بعد-نصف-يوم-المجاري&#39;,
+ &#39;/ar/world-news/823299/04-04-2018-قرد-يسحب-مولود-منزله-ويغرقه-بئر&#39;,
+ &#39;/ar/world-news/823300/04-04-2018-كتاب-يفضح-أسرار-ميغان-ماركل-تحب-شرب-الكحول-وهكذا-أبلغت-زوجها-بإنتهاء-علاقتهما&#39;,
+ &#39;/ar/world-news/823301/04-04-2018-فضائح-الاعتداءات-الجنسية-الأطفال-الكرة-الأرجنتينية-تتوالى&#39;,
+ &#39;/ar/world-news/823304/04-04-2018-النجمة-الأمريكية-جينيفر-غارنر-تنعي-دجاجتها-الراحلة-إنستغرام&#39;,
+ &#39;/ar/world-news/823305/04-04-2018-بالفيديو-أفعى-سامة-تتسلل-داخل-بنطال-صياد&#39;,
+ &#39;/ar/world-news/823307/04-04-2018-بالفيديو-مشاجرة-طريفة-بين-أرنبين-الطريق&#39;,
+ &#39;/ar/world-news/823308/04-04-2018-طريقة-تخزين-البطاطس-الفريزر&#39;,
+ &#39;/ar/world-news/cars/&#39;,
+ &#39;/ar/world-news/technology/&#39;,
+ &#39;/ar/world-news/tourism-and-travel/&#39;,
+ &#39;/contactus/&#39;,
+ &#39;/distribution/&#39;,
+ &#39;/en/english/&#39;,
+ &#39;/kottab/Azza-Al-Ghamdi/822468/31-03-2018-هل-الممكن-تحويل-مرحلة-رياض-الأطفال-إلى-خمس-سنوات/&#39;,
+ &#39;/kottab/Hanan-Badr-Al-Roumi/822871/02-04-2018-وليش-تخلونه-عيين/&#39;,
+ &#39;/kottab/Ibrahim-el-neghemesh/822498/31-03-2018-إعادة-النظر-بالترقيات/&#39;,
+ &#39;/kottab/abdulhadi-alsaleh/822874/02-04-2018-أمير-المؤمنين-مواجهة-الفساد/&#39;,
+ &#39;/kottab/abdullah-alabdeljader/822448/31-03-2018-إجراءات-الاستثمار-بتركيا-تحتاج-إلى-تطوير/&#39;,
+ &#39;/kottab/abdulmohsen-mohamed-alhusaini/822655/01-04-2018-الرئيس-الفلبيني-وعقدة-الكويت/&#39;,
+ &#39;/kottab/adel-alibrahim/822004/29-03-2018-فساد-الأغذية/&#39;,
+ &#39;/kottab/adel-almetiri/822215/30-03-2018-كامب-ديفيد-خليجي-/&#39;,
+ &#39;/kottab/adel-nayef-al-mezel/822007/29-03-2018-من-أمن-العقوبة-أساء-الأدب/&#39;,
+ &#39;/kottab/ahmad-husain/822654/01-04-2018-تكوين-منارة-ثقافية-زاهية/&#39;,
+ &#39;/kottab/ahmed-boumeree/822715/01-04-2018-مشعل-وخالد-عندما-تتغير-اللعبة/&#39;,
+ &#39;/kottab/ali-abdulrahman-alhwayl/822464/31-03-2018-الفساد-وجهة-نظر-أخرى/&#39;,
+ &#39;/kottab/aliaalhkaled/822651/01-04-2018-نقاشنا-لماذا-نخشى-الرأي/&#39;,
+ &#39;/kottab/badr-saead/823095/03-04-2018-اجلس-العرش/&#39;,
+ &#39;/kottab/bandar-al-mutash/822009/29-03-2018-غوبلز-مجتمعنا/&#39;,
+ &#39;/kottab/dali-alkhamsan/822212/30-03-2018-الإدارة-السوء-إلى-الفساد/&#39;,
+ &#39;/kottab/essam-abd-elatief-elfelieg/823089/03-04-2018-والآن-المتطرف-البيئة-الأوقاف/&#39;,
+ &#39;/kottab/fatma-el-mezeal/822213/30-03-2018-عمق-الهاوية/&#39;,
+ &#39;/kottab/gasem-mohamed-eL-tneeb/822437/31-03-2018-بومساعد-الذي-عرفته/&#39;,
+ &#39;/kottab/ghneim-alzoubi/823090/03-04-2018-الشيشة-الأماكن-العامة-secondhand-smoking/&#39;,
+ &#39;/kottab/ghneima-mohamed-othman-al-haydar/821741/28-03-2018-نشمية/&#39;,
+ &#39;/kottab/hamed-al-ali/821743/28-03-2018-قانون-المرور-ومرور-القانون/&#39;,
+ &#39;/kottab/hasan-alhadad/822877/02-04-2018-الإصلاح-والضمير/&#39;,
+ &#39;/kottab/heba-anwer/822656/01-04-2018-وافد/&#39;,
+ &#39;/kottab/hedi-ben-ayed-al-ajmi/822217/30-03-2018-المشكلة-المواطنين/&#39;,
+ &#39;/kottab/houssam-fathi/821863/28-03-2018-وداعا-أستاذ-لويس/&#39;,
+ &#39;/kottab/houssam-fathi/822724/01-04-2018-مصري-سليم-ومتعلم/&#39;,
+ &#39;/kottab/houssam-fathi/822989/02-04-2018-العاق-غلب-المرحوم/&#39;,
+ &#39;/kottab/houssam-fathi/823231/03-04-2018-مبروك-ولكن/&#39;,
+ &#39;/kottab/khalifa-alotaiby/822006/29-03-2018-خيانة-الأمانة-وفقا-لقانون-الجزاء-الكويتي/&#39;,
+ &#39;/kottab/mansour-aldabaan/821744/28-03-2018-نثق-بشبابنا-ونستقدم-العمالة/&#39;,
+ &#39;/kottab/mansour-aldabaan/822652/01-04-2018-المطب-عيدكم-مبارك/&#39;,
+ &#39;/kottab/mefreh-alshammrei/822238/30-03-2018-هدية-سعيد-شر-البلية-يضحك/&#39;,
+ &#39;/kottab/mohamed-damar-yazdh/822470/31-03-2018-يوم-الخميس/&#39;,
+ &#39;/kottab/mohamed-elsaker/822467/31-03-2018-سيد-الأيتام-نبي-الأنام/&#39;,
+ &#39;/kottab/mohamed-elsaker/822875/02-04-2018-أمطار-وغبار-بلوحة-انتظار/&#39;,
+ &#39;/kottab/mohammed-jalahma/822657/01-04-2018-التحويلات-وابتكارات-نيابية/&#39;,
+ &#39;/kottab/motlak-alkarawy/821745/28-03-2018-الأخلاق-ركيزة-أساسية-عند-الإنسان/&#39;,
+ &#39;/kottab/motlak-alkarawy/823094/03-04-2018-الرحمة-العالمية-صرح-الخير-والإنسانية&#39;,
+ &#39;/kottab/motlak-alkarawy/823094/03-04-2018-الرحمة-العالمية-صرح-الخير-والإنسانية/&#39;,
+ &#39;/kottab/nasser-el-ammar/821742/28-03-2018-يا-عيالي-هذا-أبوكم-الجديد/&#39;,
+ &#39;/kottab/nasser-el-ammar/823091/03-04-2018-كنابل-الوزير/&#39;,
+ &#39;/kottab/nermin-alhooti/821746/28-03-2018-الكلمة-الطيبة/&#39;,
+ &#39;/kottab/nermin-alhooti/822008/29-03-2018-عيد-اليتيم/&#39;,
+ &#39;/kottab/saleh-al-ojairy/823241/03-04-2018-المخلوقات-خارج-الأرض/&#39;,
+ &#39;/kottab/saleh-alshaiji/822469/31-03-2018-لسنا-قطيع-أغنام/&#39;,
+ &#39;/kottab/saleh-alshaiji/822876/02-04-2018-قلوب-ذهب/&#39;,
+ &#39;/kottab/salem-alsbei/822872/02-04-2018-الشيخ-محمد-اليوسف-قيادة-إلى-قيادة-أكبر/&#39;,
+ &#39;/kottab/samer-abo-roman/822653/01-04-2018-شبكات-التواصل-الاجتماعي-تكشف-تزيف-أفكارنا/&#39;,
+ &#39;/kottab/sami-alkhrafi/822466/31-03-2018-تصرفات-تنرفزني/&#39;,
+ &#39;/kottab/sheikha-eesa/822010/29-03-2018-لباس-المعلمين-والمعلمات-وخلفياتهم-الثقافية/&#39;,
+ &#39;/kottab/slah-alsayer/822005/29-03-2018-قادة-الأسواق/&#39;,
+ &#39;/kottab/slah-alsayer/822216/30-03-2018-مذكرة-تفسيرية-للأوهام/&#39;,
+ &#39;/kottab/slah-alsayer/823092/03-04-2018-القبيلة-والعلاقات-الدولية/&#39;,
+ &#39;/kottab/sultan-ibrahim-alkhalaf/822214/30-03-2018-ستيفن-هوكنغ-مات-ملحدا/&#39;,
+ &#39;/kottab/tarek-brosli/822465/31-03-2018-حل-الازدحامات-بسحب-نصف-مليون-رخصة/&#39;,
+ &#39;/kottab/tareq-hamada/822755/01-04-2018--سريرلا-يكفي-/&#39;,
+ &#39;/kottab/tariq-alddarbas/823093/03-04-2018-جمعة-مباركة-عليكم/&#39;,
+ &#39;/kottab/wafaa-alhashash/822873/02-04-2018-الاعتدال-طريقك-إلى-السعادة/&#39;,
+ &#39;/kottab/youssuf-abdulrahman/821823/28-03-2018-امرأة-عظيمة-بلدي/&#39;,
+ &#39;/kottab/youssuf-abdulrahman/822110/29-03-2018-أوقاف-الوسطية-والغلاة/&#39;,
+ &#39;/kottab/youssuf-abdulrahman/822316/30-03-2018-فيلم-رحمة-RAHMA/&#39;,
+ &#39;/kottab/youssuf-abdulrahman/822530/31-03-2018-ورحل-عاشق-إريتريا/&#39;,
+ &#39;/kottab/youssuf-abdulrahman/822746/01-04-2018-الإسلام-المعاصر-ومسؤولية-العلماء/&#39;,
+ &#39;/kottab/youssuf-abdulrahman/822918/02-04-2018-بانوراما-جوهرة-الكويت/&#39;,
+ &#39;/kottab/youssuf-abdulrahman/823176/03-04-2018-لصوص-هذا-الزمان/&#39;,
+ &#39;/kottab/zaar-alrashidi/821740/28-03-2018-حكومة-منتخبة-وشعب-نص-ديموقراطي/&#39;,
+ &#39;/kottab/zaar-alrashidi/822211/30-03-2018-رواتب-دعم-العمالة-ومدينة-الحرير/&#39;,
+ &#39;/kottab/zaar-alrashidi/822463/31-03-2018-من-سرق-ديموقراطيتنا/&#39;,
+ &#39;/marketing/&#39;,
+ &#39;/newspaper/&#39;,
+ &#39;/newspaper/iosandroid.aspx&#39;,
+ &#39;/newspaper/search.aspx?search=&#39;,
+ &#39;/rss/&#39;,
+ &#39;/sitemap/&#39;,
+ &#39;/weather/&#39;,
+ &#39;/whatsapp/&#39;,
+ &#39;/writers&#39;,
+ &#39;/writers/&#39;,
+ &#39;http://instagram.com/alanbanews&#39;,
+ &#39;http://pdf.alanba.com.kw&#39;,
+ &#39;http://pdf.alanba.com.kw/&#39;,
+ &#39;http://pdf.alanba.com.kw/pdf/2018/01/29-01-2018/mulhak/mulhak.html&#39;,
+ &#39;http://pdf.alanba.com.kw/pdf/2018/02/05-02-2018/mulhak/mulhak.html#p=1&#39;,
+ &#39;http://player.mangomolo.com/v1/video?id=26902616&amp;user_id=144&amp;countries=Q0M%3D&amp;filter=DENY&amp;signature=f3b3bb368bc0bb6ef447e305a112ff97&#39;,
+ &#39;http://webserver2.kncc.com/arabic_index.php&#39;,
+ &#39;http://www.alanba.com.kw/823336&#39;,
+ &#39;http://www.alanba.com.kw/alwafiyat/&#39;,
+ &#39;http://www.alanba.com.kw/caricature/&#39;,
+ &#39;http://www.alanba.com.kw/newspaper/&#39;,
+ &#39;http://www.alanba.com.kw/prayers/&#39;,
+ &#39;http://www.boursakuwait.com.kw/&#39;,
+ &#39;http://www.un.org/sustainabledevelopment/ar/&#39;,
+ &#39;https://instagram.com/alanbanews/&#39;,
+ &#39;https://outlook.office365.com&#39;,
+ &#39;https://plus.google.com/108478987522512784324&#39;,
+ &#39;https://plus.google.com/u/0/108478987522512784324/posts&#39;,
+ &#39;https://t.me/alanbanews&#39;,
+ &#39;https://twitter.com/AlAnba_News_KW&#39;,
+ &#39;https://www.facebook.com/AlAnbaa.Newspaper&#39;,
+ &#39;https://www.google.com/maps/place/%D8%AC%D8%B1%D9%8A%D8%AF%D8%A9+%D8%A7%D9%84%D8%A7%D9%86%D8%A8%D8%A7%D8%A1%E2%80%AD/@29.3317962,47.9526937,17z/data=!3m1!4b1!4m5!3m4!1s0x3fcf9ac55f201eed:0xfff1bf0312018671!8m2!3d29.3317962!4d47.950505&#39;,
+ &#39;https://www.instagram.com/alanbanews&#39;,
+ &#39;https://www.instagram.com/alanbanews/&#39;,
+ &#39;https://www.linkedin.com/company-beta/13196320/&#39;,
+ &#39;https://www.twitter.com/AlAnba_News_KW&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">absolute_links</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;http://instagram.com/alanbanews&#39;,
+ &#39;http://pdf.alanba.com.kw&#39;,
+ &#39;http://pdf.alanba.com.kw/&#39;,
+ &#39;http://pdf.alanba.com.kw/pdf/2018/01/29-01-2018/mulhak/mulhak.html&#39;,
+ &#39;http://pdf.alanba.com.kw/pdf/2018/02/05-02-2018/mulhak/mulhak.html#p=1&#39;,
+ &#39;http://player.mangomolo.com/v1/video?id=26902616&amp;user_id=144&amp;countries=Q0M%3D&amp;filter=DENY&amp;signature=f3b3bb368bc0bb6ef447e305a112ff97&#39;,
+ &#39;http://webserver2.kncc.com/arabic_index.php&#39;,
+ &#39;http://www.alanba.com.kw/823336&#39;,
+ &#39;http://www.alanba.com.kw/aboutus/ar/&#39;,
+ &#39;http://www.alanba.com.kw/aboutus/en/&#39;,
+ &#39;http://www.alanba.com.kw/alwafiyat/&#39;,
+ &#39;http://www.alanba.com.kw/anbavideo/&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/823216/03-04-2018-إيران-احتجاجات-الأهواز-تتواصل-لليوم-السادس-والسلطات-تحولها-إلى-ثكنة-عسكرية&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/823218/03-04-2018-ترامب-للكونغرس-استخدموا-الخيار-النووي-لإقرار-قانون-الهجرة&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/823219/03-04-2018-الفلسطينيون-يتوجهون-إلى-مجلس-الأمن-طلبا-للحماية-الدولية&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/823220/03-04-2018-بالفيديو-كوستاريكا-فوز-مرشح-الحزب-الحاكم-بالانتخابات-الرئاسية&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/egypt-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/egypt-news/823179/03-04-2018-البرلمان-المصري-يوافق-انشاء-مجلس-أعلى-لمواجهة-الارهاب-والتطرف&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/egypt-news/823234/03-04-2018-عبدالغني-لـ-الأنباء-تفرقة-بين-أبناء-مصر-الداخل-والخارج-الحصول-الوحدات-السكنية&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/lebanon-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/lebanon-news/823204/03-04-2018-سكينة-سياسية-إلى-بعد-مؤتمر-باريس-نهاية-الأسبوع&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/lebanon-news/823205/03-04-2018-مخيبر-لـ-الأنباء-قانون-الانتخاب-مربك-جدا-للمرشحين-وللناخبين-معا&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/reports-and-issues/&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/syria-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/arabic-international-news/syria-news/823202/03-04-2018-الحافلات-تبدأ-الخروج-دوما-وجيش-الإسلام-يتمسك-بنفي-الاتفاق&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/823108/03-04-2018-زين-تختتم-رعايتها-البلاتينية-للموسم-الثالث-برنامج-حمد-شو&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/823109/03-04-2018-شيماء-سبت-الحروب-أبعدتني-الدراما&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/823110/03-04-2018-الرسام-ولويس-الجمعة-صالة-التزلج&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/823114/03-04-2018-للمرة-الأولى-شيرين-تقع-فخ-رامز&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/823115/03-04-2018-راشد-الماجد-يطرح-أكثر-شخص-بالدنيا&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/823117/03-04-2018-سنتربوينت-تتعاون-أنغامي-لإطلاق-موسم-جديد-الجلسات-الفنية-لدعم-المواهب-الناشئة&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/823290/04-04-2018-بالفيديو-والصورهكذا-احتفلت-أمل-العوضي-بميلادها-وهذا-عمرها-الحقيقي/&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823111/03-04-2018-جيني-إسبر-تستعد-للارتباط-بأمير-عربي&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823113/03-04-2018-حظر-تجوال-لإلهام-شاهين-وأمينة-خليل&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823278/04-04-2018-منشور-يشعل-النار-بين-أحلام-وإليسا-والرد-تغريدة/&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823281/04-04-2018-الفنان-محمد-عبده-يغنى-الهواء-احتفالا-بفوز-السيسى-بولاية-رئاسية-ثانية/&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823286/04-04-2018-بالصور-هذا-سعر-جاكيت-نانسي-عجرم-فيديو-كليبها-الجديد-الذي-شغل-مواقع-التواصل-الاجتماعي-\u200e/&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823288/04-04-2018-بالفيديو-نجمة-عربية-تعترف-للمرة-الأولى-تعرضها-للتحرش-خلال-حملها/&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823295/04-04-2018-براد-بيت-وأنجلينا-جولي-يقرران-إنهاء-إجراءات-الطلاق&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823297/04-04-2018-فنانة-سورية-شهيرة-تتعرض-لنوبة-قلبية-مفاجئة-وهذا-وضعها-الصحي-الآن&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/arabic-international/823306/04-04-2018-بالفيديو-تحولت-ليلى-غفران-إلى-شبيهة-هيفا-وهبي&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/remote-control/&#39;,
+ &#39;http://www.alanba.com.kw/ar/art-news/scenes/&#39;,
+ &#39;http://www.alanba.com.kw/ar/celebrity-tweek/823240/03-04-2018-هل-سيبعث-المسيح-جديد-سئوال-يثير-جدلا-و-ماذا-قالت-أوبرا-وينفري-معجبيهاوماذا-قالت-نجمة-هوليوود-بعد-الإصابة-بالألزهايمر/&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/823129/03-04-2018--ملايين-دولار-أرباح-أهم-منصات-العملات-الرقمية-يوميا&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/823131/03-04-2018-تراجعات-البورصة-ارتباك-وتساؤلات&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/823132/03-04-2018-العذبي-استكشاف-العراق-للنفط-أراضيه-ليس-ضمن-الحقول-المشتركة&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/823132/03-04-2018-العذبي-استكشاف-العراق-للنفط-أراضيه-ليس-ضمن-المنطقة-المشتركة&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/823133/03-04-2018-المتكاملة-القابضة-أول-الإدراجات-العائلية-بالبورصة&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/823134/03-04-2018-الخرافي-انفراجة-متوقعة-للأراضي-الصناعية-نهاية-&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/823135/03-04-2018-الكويت-للتأمين-قادرون-تغطية-تعويضات-حادثة-الأرتال&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/business-and-markets/&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/energy-oil-petroleum/&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/real-estates/&#39;,
+ &#39;http://www.alanba.com.kw/ar/economy-news/reports/&#39;,
+ &#39;http://www.alanba.com.kw/ar/exclusive-reports/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-community/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-community/823102/03-04-2018-انطلاق-معرض-الكويت-الطبي-برعاية-وزارة-الصحة-اليوم&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-community/823103/03-04-2018-قدم-بلا-ألم-حملة-توعوية-مستشفيات-الكويت-لرفع-الوعي-بمرض-التهاب-الأعصاب-الطرفية&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-community/823104/03-04-2018-المنفوحي-يفتتح-مؤتمر-ومعرض-الكويت-السابع-للمباني-الخضراء-غدا&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-community/823106/03-04-2018-بيتك-يطلق-النسخة-الرابعة-تطبيق-القرآن-الكريم-بخصائص-مميزة&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-community/exhibitions-and-forums/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-community/occasions-events/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-community/occasions-events/823107/03-04-2018-بالفيديو-دار-الوفاء-الأنباء-تحتفي-بكوكبة-قدامى-العاملين-بها-ممن-أمضوا-أكثر-عاما-الخدمة/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823166/03-04-2018-بالفيديو-أبل-نعمل-لتمديد-صلاحية-شهادات-الإعاقة-لـ-سنوات&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823167/03-04-2018-المطوع-دمج-ذوي-الإعاقة-مختلف-المجالات&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823174/03-04-2018-الخلف-علينا-معالجة-سلبيات-العولمة-وما-تدعو-إليه-انفلات&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823175/03-04-2018-بالفيديو-الروضان-قسائم-صناعية-للشباب-لإقامة-مشاريع-صغيرة-ومتوسطة&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823180/03-04-2018-بالفيديو-الحصان-تابع-تركيب-آخر-قطعة-خرسانة-وصلة-الدوحة-نسبة-الإنجاز-جسر-جابر&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823190/03-04-2018-بالفيديو-الأحمد-مصانع-جديدة-المنطقة-الجنوبية-وتقليص-موسم-التخييم-مجددا-وارد&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823224/03-04-2018-الراشد-حرص-كويتي-التواصل-مختلف-مدن-العراق&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823245/03-04-2018-توظيف-مواطن-منهم-تربوي-فورا&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823245/03-04-2018-توظيف-مواطن-منهم-تربوي-فورا/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823262/03-04-2018-مجلس-الأمة-يصوت-بالموافقة-الديوان-الوطني-لحقوق-الإنسان-بمداولته-الثانية-ويحيله-إلى-الحكومة/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823264/04-04-2018-توجه-لجلب-العمالة-المنزلية-الهند-وفيتنام/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823265/04-04-2018-محافظ-البصرة-أملاك-الكويتيين-لدينا-محفوظة-لهم-ولا-يمكن-التلاعب-بها/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823271/04-04-2018-الروضان-تحديد-تكلفة-العمالة-بـ-دينارا-ليس-نهائيا/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823272/04-04-2018-الأنباء-تنشر-أسماء-دفعة-جديدة-رشحها-ديوان-الخدمة-للعمل-لدى-الجهات-الحكومية&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/823272/04-04-2018-الأنباء-تنشر-أسماء-دفعة-جديدة-رشحها-ديوان-الخدمة-للعمل-لدى-الجهات-الحكومية/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/advertising/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/complaints/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/education/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/education/823088/03-04-2018-بالفيديو-سيلفرمان-برامج-لزيادة-أعداد-الطلبة-الكويتيين-الدارسين-الجامعات-الأميركية&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/education/823194/03-04-2018-التربية-لموظفي-البيئة-حق-دخول-كل-الأماكن-والاستعانة-برجال-الشرطة-إذا-اقتضى-الأمر&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/education/823194/03-04-2018-التربية-لموظفي-البيئة-حق-دخول-كل-الأماكن-والاستعانة-برجال-الشرطة-إذا-اقتضى-الأمر/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/health/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/incidents-issues/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/incidents-issues/823207/03-04-2018-نجاة-أطفال-افتراس-كلب-ضال&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/incidents-issues/823210/03-04-2018-أربعيني-القيروان-إلى-التنفيذ-المدني&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/incidents-issues/823211/03-04-2018-استقبال-طلبات-جواز-السفر-الإلكتروني-موقع-الداخلية-حتى-نهاية-يوليو&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/incidents-issues/823213/03-04-2018-الداخلية-عدم-الالتزام-بقواعد-المرور-السبب-الحادث&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/islamic-faith/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/municipal-council/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/municipal-council/823085/03-04-2018-إنذار-لإخلاء-سكن-عزابفي-الرقة&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/municipal-council/823087/03-04-2018-إزالة-محلا-مخالفا-العاصمة&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/official/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/official/823222/03-04-2018-بالفيديو-الأمير-بحث-رئيس-جزر-القمر-التعاون-الثنائي-والقضايا-المشتركة/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/official/823263/03-04-2018-الأمير-يرعى-ويحضر-الأوبريت-الوطني-عجيبة-هالديرةغدا/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/parliament/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/parliament/823162/03-04-2018-بالفيديو-حقوق-الإنسان-العفو-الأميري-الأكبر-منذ-سنوات/&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/parliament/823195/03-04-2018-المويزري-يطالب-الغانم-بتهيئة-الظروف-لمناقشة-شكواه-جلسة-اليوم&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/parliament/823198/03-04-2018-الحويلة-لوزير-الصحة-إجراءاتكم-القانونية-تجاه-عيادة-طبية-غير-المرخص-لها&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/parliament/823199/03-04-2018-عاشور-يسأل-وزيرة-الشؤون-المقار-غير-المرخصة-للجمعيات-والمبرات-الخيرية&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/parliament/823201/03-04-2018-الكندري-لوزير-الصحة-إجراءاتكم-لدعم-الصيادلة-الكويتيين&#39;,
+ &#39;http://www.alanba.com.kw/ar/kuwait-news/usa-students/&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823045/03-04-2018-بالفيديو-نهاية-غير-سعيدة-للصوص-حاولوا-سرقة-متجر-الإمارات&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823048/03-04-2018-بالفيديو-سائق-شاحنة-حالة-غير-طبيعية-يقود-بتهور-ويصدم-عددا-السيارات-بالسعودية&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823050/03-04-2018-فيديو-صادم-اعتداء-وحشي-محجبة-مستشفى-اميركي&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823053/03-04-2018-بالفيديوكيف-تعاملت-هذه-الموظفة-حقائب-المسافرين-بأحد-مطارات-اليابان&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823054/03-04-2018-بالفيديو-ممثلة-مصرية-بوضع-صحي-دقيق-وتصرخ-فيسبوك-إلحقوني-بموت&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823056/03-04-2018-بالفيديو-خادم-مسجد-مصر-يقيم-عزاء-لكلب-شارع-ويكرس-حياته-لخدمة-الحيوانات&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823239/03-04-2018-بالفيديو-أول-كهف-ملحي-بالأردن-يقدم-لرواده-الطاقة-الإيجابية&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823279/04-04-2018-بالفيديو-امرأة-معطف-الفرو-تأخذ-صورة-دب-وسط-الثلج-تستفز-المتابعين/&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823284/04-04-2018-شاهد-البذخ-ثم-البذخ-هكذا-احتفلت-عائلة-كارداشيان-بعيد-الفصح/&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823285/04-04-2018-صورة-رضيع-تجتاح-مواقع-التواصل-الاجتماعي-والسبب/&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823294/04-04-2018-تحذير-انفجار-الكون-الوقت-أقرب-مما-توقع-العلماء&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823302/04-04-2018-مدفن-أعظم-مدينة-بالتاريخ-ذكرها-القرآن-هذا-المكان&#39;,
+ &#39;http://www.alanba.com.kw/ar/last/823303/04-04-2018-بالفيديو-ابتكار-جديد-لتحديد-لحية-الرجال-بدقة&#39;,
+ &#39;http://www.alanba.com.kw/ar/literature-and-culture/&#39;,
+ &#39;http://www.alanba.com.kw/ar/literature-and-culture/faces-in-the-light/&#39;,
+ &#39;http://www.alanba.com.kw/ar/literature-and-culture/from-the-past/&#39;,
+ &#39;http://www.alanba.com.kw/ar/opinion/&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/823143/03-04-2018-الاتحاد-يقسو-الباطن-ويبلغ-نهائي-كأس-الملك&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/823144/03-04-2018-بطولة-بولينغ-للبنات-ذوي-الاحتياجات-الخاصة&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/823147/03-04-2018-Bentley-Bentayga-تنافس-سباق-بايكس-بيك&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/823149/03-04-2018-السلطان-دعم-محدود-لبطولة-سلوى-الصباح&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/823156/03-04-2018-كأس-الطائرة-بين-الكويت-وكاظمة&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/823157/03-04-2018-يد-العميد-وكاظمة-معركة-الكبار&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/823158/03-04-2018-الخالدي-نادر-ومرزوق-يغيبان-مواجهة-البرتقالي&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/823160/03-04-2018-العسعوسي-مشكلة-كاظمة-عدم-استغلال-الفرص&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/arabic-sports/&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/arabic-sports/823146/03-04-2018-أهلي-جدة-لحسم-التأهل-أمام-تراكتور-والوحدة-لتجاوز-لوكومتيف&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/arabic-sports/823148/03-04-2018-بدلاء-الفراعنة-فرصة-أخيرة-بتجربة-الكويت&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/gulfcup/&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/world-sports/&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/world-sports/823182/03-04-2018-مباريات-ذهاب-ربع-نهائي-أبطال-أوروبا-حصريا-علىbeIN&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/world-sports/823183/03-04-2018-أتلتيكو-يعزز-وصافته-الليغا&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/world-sports/823187/03-04-2018-اليوفي-والريالملحمة-الثأر-تورينو&#39;,
+ &#39;http://www.alanba.com.kw/ar/sport-news/world-sports/823282/04-04-2018-رسميا-فيفا-يهدد-اللاعب-محمد-صلاح-بالاستبعاد-المونديال-وغليان-مصري/&#39;,
+ &#39;http://www.alanba.com.kw/ar/variety-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/variety-news/alanba-photo/&#39;,
+ &#39;http://www.alanba.com.kw/ar/variety-news/entertainment/&#39;,
+ &#39;http://www.alanba.com.kw/ar/variety-news/kitchen-cooking/&#39;,
+ &#39;http://www.alanba.com.kw/ar/variety-news/life-style/&#39;,
+ &#39;http://www.alanba.com.kw/ar/variety-news/marine/&#39;,
+ &#39;http://www.alanba.com.kw/ar/variety-news/shawared/&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823046/03-04-2018-بالفيديو-أسد-أبيض-ينقض-حافلة-طلاب-خلال-رحلة-سفاري&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823047/03-04-2018-بالفيديو-كابتن-طائرة-يقبل-الأرض-بعد-هبوط-اضطراري-خطر&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823049/03-04-2018-كلمات-تتوقعها-محظورة-العائلة-الملكية-ببريطانيا&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823058/03-04-2018-بعد-أيام-الطلاق-شهر-العسل-نجمة-مصرية-ثانية-تكشف-طلاقها-سرا-زوجها&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823059/03-04-2018-مفاجأة-واتساب-ميزة-لطالما-انتظرناها&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823062/03-04-2018-أغرب-أخبار-حقيقية-ظنها-البعض-كذبة-أبريل&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823063/03-04-2018-حاولت-خنق-طفليها-فقتلت-أحدهما-دماغيا&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823065/03-04-2018-بالفيديو-لحظة-صدم-سيارة-لـ-عربة-يجرها-حصان-والإطاحة-بركابها&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823067/03-04-2018-بالصور-قرد-يخطف-رضيعا-جوار-أمه-الهند&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823068/03-04-2018-المغرب-مشروع-قانون-لإخصاء-المغتصبين-جراحيا&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823072/03-04-2018-صور-مؤثرة-لابنة-وحفيدة-وحيد-القرن-الأبيض-الأخير&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823073/03-04-2018-جوليا-بسترانا-أقبح-امرأة-العالم-عانت-حتى-بعد-وفاتها-بـ-عاما&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823074/03-04-2018-فيديو-لحريق-تسبب-بتعليق-حركة-الطيران-بمطار-لندن&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823076/03-04-2018-بالفيديو-مقتل-شاب-كمين-بلاي-شتيشن&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823238/03-04-2018-بالفيديو-متحف-لصور-السيلفي-لوس-أنجيليس&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823280/04-04-2018-فيديو-لطالب-يمني-جامعي-بالهند-ضربوه-وسحلوه-بهجوم-جماعي/&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823283/04-04-2018-فيديو-منفر-لطفلة-لبنانية-تدخن-بمباركة-والديها/&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823287/04-04-2018-مفاجأة-رحيل-روائي-مصري-شهير-تنبأ-بموعد-وتاريخ-وفاته-فى-روايته/&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823289/04-04-2018-بالفيديو-بلدية-دبي-تكشف-حقيقة-الفيديو-المتداول-عنالبيض-البلاستيكي-/&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823296/04-04-2018-هل-وقفت-يوما-أمام-جهاز-لتنقية-الهواء-ثم-ترددت-شرائه-بسبب-سعره-حسنا-فعلت،-الحل-هذه-النبتة&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823298/04-04-2018-وقائع-إنقاذ-طفل-بعد-نصف-يوم-المجاري&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823299/04-04-2018-قرد-يسحب-مولود-منزله-ويغرقه-بئر&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823300/04-04-2018-كتاب-يفضح-أسرار-ميغان-ماركل-تحب-شرب-الكحول-وهكذا-أبلغت-زوجها-بإنتهاء-علاقتهما&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823301/04-04-2018-فضائح-الاعتداءات-الجنسية-الأطفال-الكرة-الأرجنتينية-تتوالى&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823304/04-04-2018-النجمة-الأمريكية-جينيفر-غارنر-تنعي-دجاجتها-الراحلة-إنستغرام&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823305/04-04-2018-بالفيديو-أفعى-سامة-تتسلل-داخل-بنطال-صياد&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823307/04-04-2018-بالفيديو-مشاجرة-طريفة-بين-أرنبين-الطريق&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/823308/04-04-2018-طريقة-تخزين-البطاطس-الفريزر&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/cars/&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/technology/&#39;,
+ &#39;http://www.alanba.com.kw/ar/world-news/tourism-and-travel/&#39;,
+ &#39;http://www.alanba.com.kw/caricature/&#39;,
+ &#39;http://www.alanba.com.kw/contactus/&#39;,
+ &#39;http://www.alanba.com.kw/distribution/&#39;,
+ &#39;http://www.alanba.com.kw/en/english/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/Azza-Al-Ghamdi/822468/31-03-2018-هل-الممكن-تحويل-مرحلة-رياض-الأطفال-إلى-خمس-سنوات/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/Hanan-Badr-Al-Roumi/822871/02-04-2018-وليش-تخلونه-عيين/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/Ibrahim-el-neghemesh/822498/31-03-2018-إعادة-النظر-بالترقيات/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/abdulhadi-alsaleh/822874/02-04-2018-أمير-المؤمنين-مواجهة-الفساد/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/abdullah-alabdeljader/822448/31-03-2018-إجراءات-الاستثمار-بتركيا-تحتاج-إلى-تطوير/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/abdulmohsen-mohamed-alhusaini/822655/01-04-2018-الرئيس-الفلبيني-وعقدة-الكويت/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/adel-alibrahim/822004/29-03-2018-فساد-الأغذية/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/adel-almetiri/822215/30-03-2018-كامب-ديفيد-خليجي-/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/adel-nayef-al-mezel/822007/29-03-2018-من-أمن-العقوبة-أساء-الأدب/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/ahmad-husain/822654/01-04-2018-تكوين-منارة-ثقافية-زاهية/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/ahmed-boumeree/822715/01-04-2018-مشعل-وخالد-عندما-تتغير-اللعبة/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/ali-abdulrahman-alhwayl/822464/31-03-2018-الفساد-وجهة-نظر-أخرى/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/aliaalhkaled/822651/01-04-2018-نقاشنا-لماذا-نخشى-الرأي/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/badr-saead/823095/03-04-2018-اجلس-العرش/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/bandar-al-mutash/822009/29-03-2018-غوبلز-مجتمعنا/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/dali-alkhamsan/822212/30-03-2018-الإدارة-السوء-إلى-الفساد/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/essam-abd-elatief-elfelieg/823089/03-04-2018-والآن-المتطرف-البيئة-الأوقاف/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/fatma-el-mezeal/822213/30-03-2018-عمق-الهاوية/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/gasem-mohamed-eL-tneeb/822437/31-03-2018-بومساعد-الذي-عرفته/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/ghneim-alzoubi/823090/03-04-2018-الشيشة-الأماكن-العامة-secondhand-smoking/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/ghneima-mohamed-othman-al-haydar/821741/28-03-2018-نشمية/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/hamed-al-ali/821743/28-03-2018-قانون-المرور-ومرور-القانون/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/hasan-alhadad/822877/02-04-2018-الإصلاح-والضمير/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/heba-anwer/822656/01-04-2018-وافد/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/hedi-ben-ayed-al-ajmi/822217/30-03-2018-المشكلة-المواطنين/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/houssam-fathi/821863/28-03-2018-وداعا-أستاذ-لويس/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/houssam-fathi/822724/01-04-2018-مصري-سليم-ومتعلم/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/houssam-fathi/822989/02-04-2018-العاق-غلب-المرحوم/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/houssam-fathi/823231/03-04-2018-مبروك-ولكن/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/khalifa-alotaiby/822006/29-03-2018-خيانة-الأمانة-وفقا-لقانون-الجزاء-الكويتي/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/mansour-aldabaan/821744/28-03-2018-نثق-بشبابنا-ونستقدم-العمالة/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/mansour-aldabaan/822652/01-04-2018-المطب-عيدكم-مبارك/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/mefreh-alshammrei/822238/30-03-2018-هدية-سعيد-شر-البلية-يضحك/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/mohamed-damar-yazdh/822470/31-03-2018-يوم-الخميس/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/mohamed-elsaker/822467/31-03-2018-سيد-الأيتام-نبي-الأنام/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/mohamed-elsaker/822875/02-04-2018-أمطار-وغبار-بلوحة-انتظار/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/mohammed-jalahma/822657/01-04-2018-التحويلات-وابتكارات-نيابية/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/motlak-alkarawy/821745/28-03-2018-الأخلاق-ركيزة-أساسية-عند-الإنسان/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/motlak-alkarawy/823094/03-04-2018-الرحمة-العالمية-صرح-الخير-والإنسانية&#39;,
+ &#39;http://www.alanba.com.kw/kottab/motlak-alkarawy/823094/03-04-2018-الرحمة-العالمية-صرح-الخير-والإنسانية/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/nasser-el-ammar/821742/28-03-2018-يا-عيالي-هذا-أبوكم-الجديد/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/nasser-el-ammar/823091/03-04-2018-كنابل-الوزير/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/nermin-alhooti/821746/28-03-2018-الكلمة-الطيبة/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/nermin-alhooti/822008/29-03-2018-عيد-اليتيم/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/saleh-al-ojairy/823241/03-04-2018-المخلوقات-خارج-الأرض/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/saleh-alshaiji/822469/31-03-2018-لسنا-قطيع-أغنام/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/saleh-alshaiji/822876/02-04-2018-قلوب-ذهب/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/salem-alsbei/822872/02-04-2018-الشيخ-محمد-اليوسف-قيادة-إلى-قيادة-أكبر/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/samer-abo-roman/822653/01-04-2018-شبكات-التواصل-الاجتماعي-تكشف-تزيف-أفكارنا/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/sami-alkhrafi/822466/31-03-2018-تصرفات-تنرفزني/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/sheikha-eesa/822010/29-03-2018-لباس-المعلمين-والمعلمات-وخلفياتهم-الثقافية/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/slah-alsayer/822005/29-03-2018-قادة-الأسواق/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/slah-alsayer/822216/30-03-2018-مذكرة-تفسيرية-للأوهام/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/slah-alsayer/823092/03-04-2018-القبيلة-والعلاقات-الدولية/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/sultan-ibrahim-alkhalaf/822214/30-03-2018-ستيفن-هوكنغ-مات-ملحدا/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/tarek-brosli/822465/31-03-2018-حل-الازدحامات-بسحب-نصف-مليون-رخصة/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/tareq-hamada/822755/01-04-2018--سريرلا-يكفي-/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/tariq-alddarbas/823093/03-04-2018-جمعة-مباركة-عليكم/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/wafaa-alhashash/822873/02-04-2018-الاعتدال-طريقك-إلى-السعادة/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/youssuf-abdulrahman/821823/28-03-2018-امرأة-عظيمة-بلدي/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/youssuf-abdulrahman/822110/29-03-2018-أوقاف-الوسطية-والغلاة/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/youssuf-abdulrahman/822316/30-03-2018-فيلم-رحمة-RAHMA/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/youssuf-abdulrahman/822530/31-03-2018-ورحل-عاشق-إريتريا/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/youssuf-abdulrahman/822746/01-04-2018-الإسلام-المعاصر-ومسؤولية-العلماء/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/youssuf-abdulrahman/822918/02-04-2018-بانوراما-جوهرة-الكويت/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/youssuf-abdulrahman/823176/03-04-2018-لصوص-هذا-الزمان/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/zaar-alrashidi/821740/28-03-2018-حكومة-منتخبة-وشعب-نص-ديموقراطي/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/zaar-alrashidi/822211/30-03-2018-رواتب-دعم-العمالة-ومدينة-الحرير/&#39;,
+ &#39;http://www.alanba.com.kw/kottab/zaar-alrashidi/822463/31-03-2018-من-سرق-ديموقراطيتنا/&#39;,
+ &#39;http://www.alanba.com.kw/marketing/&#39;,
+ &#39;http://www.alanba.com.kw/newspaper/&#39;,
+ &#39;http://www.alanba.com.kw/newspaper/iosandroid.aspx&#39;,
+ &#39;http://www.alanba.com.kw/newspaper/search.aspx?search=&#39;,
+ &#39;http://www.alanba.com.kw/prayers/&#39;,
+ &#39;http://www.alanba.com.kw/rss/&#39;,
+ &#39;http://www.alanba.com.kw/sitemap/&#39;,
+ &#39;http://www.alanba.com.kw/weather/&#39;,
+ &#39;http://www.alanba.com.kw/whatsapp/&#39;,
+ &#39;http://www.alanba.com.kw/writers&#39;,
+ &#39;http://www.alanba.com.kw/writers/&#39;,
+ &#39;http://www.boursakuwait.com.kw/&#39;,
+ &#39;http://www.un.org/sustainabledevelopment/ar/&#39;,
+ &#39;https://instagram.com/alanbanews/&#39;,
+ &#39;https://outlook.office365.com&#39;,
+ &#39;https://plus.google.com/108478987522512784324&#39;,
+ &#39;https://plus.google.com/u/0/108478987522512784324/posts&#39;,
+ &#39;https://t.me/alanbanews&#39;,
+ &#39;https://twitter.com/AlAnba_News_KW&#39;,
+ &#39;https://www.facebook.com/AlAnbaa.Newspaper&#39;,
+ &#39;https://www.google.com/maps/place/%D8%AC%D8%B1%D9%8A%D8%AF%D8%A9+%D8%A7%D9%84%D8%A7%D9%86%D8%A8%D8%A7%D8%A1%E2%80%AD/@29.3317962,47.9526937,17z/data=!3m1!4b1!4m5!3m4!1s0x3fcf9ac55f201eed:0xfff1bf0312018671!8m2!3d29.3317962!4d47.950505&#39;,
+ &#39;https://www.instagram.com/alanbanews&#39;,
+ &#39;https://www.instagram.com/alanbanews/&#39;,
+ &#39;https://www.linkedin.com/company-beta/13196320/&#39;,
+ &#39;https://www.twitter.com/AlAnba_News_KW&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Requests-HTML-can-also-work-with-HTML-documents-(Not-websites)">Requests-HTML can also work with HTML documents (Not websites)<a class="anchor-link" href="#Requests-HTML-can-also-work-with-HTML-documents-(Not-websites)">&#182;</a></h2><ol>
+<li>Load the document into a variable as a string, or use an HTML string</li>
+<li>Create a HTML object using the document:</li>
+</ol>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">requests_html</span> <span class="k">import</span> <span class="n">HTML</span>
+<span class="c1"># This is the HTML string</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;a href=&#39;https://httpbin.org&#39;&gt;&quot;&quot;&quot;</span>
+<span class="c1"># Parse the document</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="n">doc</span><span class="p">)</span>
+<span class="c1"># use html as usual</span>
+<span class="n">html</span><span class="o">.</span><span class="n">links</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;https://httpbin.org&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Web-Scrapping">Web Scrapping<a class="anchor-link" href="#Web-Scrapping">&#182;</a></h1><ul>
+<li>While getting links is webscraping, we can do much more</li>
+<li>What if we want to get all the headlines in the newspaper website?</li>
+<li>Use developer tools on Chrome, Safari, or Firefox</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -20721,11 +21286,14 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># fetch all h2 tags of class page-title CenterTextAlign</span>
-<span class="n">h2_tags</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;page-title CenterTextAlign&quot;</span><span class="p">)</span>
+<span class="c1"># This can be done using find using CSS selectors</span>
+<span class="c1"># Use developer tools to tell you what the correct selector is using</span>
+<span class="c1"># copy selector path, remove all nth-child reference</span>
+<span class="n">h2_tags</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;#content &gt; section &gt; div &gt; div &gt; article &gt; div &gt; h2 &gt; a&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -20735,7 +21303,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The data looks correct</span>
@@ -20750,36 +21318,32 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[91]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-news/791415/18-11-2017-هيئة-مواجهة-الأزمات-بمباركة-حكومية/&#34;&gt;هيئة مواجهة الأزمات.. بمباركة حكومية&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-news/791401/18-11-2017-المرزوق-أمطار-مثيل-لها-الثلاثاء-المقبل-وتستمر-خفيفة-ومتفرقة-حتى-ديسمبر/&#34;&gt;المرزوق: أمطار لا مثيل لها الثلاثاء المقبل وتستمر خفيفة ومتفرقة حتى 2 ديسمبر&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-news/791371/18-11-2017-بالفيديو-الطيران-الشراعي-زين-سماء-الكويت-بـ-سمعا-وطاعة-يا-صاحب-السمو/&#34;&gt;بالفيديو.. الطيران الشراعي زيَّن سماء&lt;br/&gt; الكويت بـ «سمعاً وطاعة يا صاحب السمو»&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-community/occasions-events/791275/18-11-2017-سلطنة-عمان-تحتفل-اليوم-بعيدها-الوطني-نهضة-تنموية-مستمرة-بقيادة-السلطان-قابوس/&#34;&gt;سلطنة عُمان تحتفل اليوم بعيدها الوطني الـ 47: نهضة تنموية مستمرة بقيادة السلطان قابوس&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-news/791387/18-11-2017-بالفيديو-حركة-BDS-الكويت-المقاطعة-أداة-مهمة-لمقاومة-الاستعمار-الصهيوني/&#34;&gt;بالفيديو.. حركة «BDS الكويت»: المقاطعة أداة مهمة لمقاومة&lt;br/&gt; الاستعمار الصهيوني&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-news/791408/18-11-2017-بالفيديو-معرض-الكتاب-يزيل-الحواجز-بين-الطفل-والقراءة/&#34;&gt;بالفيديو.. معرض الكتاب&lt;br/&gt; يزيل الحواجز بين الطفل والقراءة&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/arabic-international-news/lebanon-news/791426/19-11-2017-بالفيديو-استقبال-حار-الإليزيه-والحريري-أطلق-مواقفي-السياسية-الاستقلال/&#34;&gt;الحريري بعد لقاء ماكرون: سأحتفل &lt;br/&gt;بعيد الاستقلال في بيروت&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-news/791437/19-11-2017-وزير-الإعلام-وفاة-المذيع-وليد-المؤمن-خسارة-للأخبار-والبرامج-السياسية/&#34;&gt;المذيع وليد المؤمن&lt;br/&gt; في ذمة الله&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-news/791461/19-11-2017-الحربي-السماح-بدخول-المنتجات-الزراعية-المصرية-مرهون-بنتائج-هيئة-التغذية/&#34;&gt;جمال الحربي: لن نفرج عن اي منتج زراعي مصري الا بعد تأكد&lt;br/&gt; ملاءمته صحيا&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/last/791450/19-11-2017-بالفيديو-شاهدت-أحدا-محظوظا-كهذا-الصبي-شاهد-كيف-فصلت-سنتيمترات-بينه-وبين-الموت-/&#34;&gt;بالفيديو.. هل شاهدت أحداً محظوظاً كهذا الصبي؟ شاهد كيف فصلت سنتيمترات بينه وبين الموت !&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/world-news/791447/19-11-2017-بالفيديو-الشرطة-الإسبانية-تلاحق-متسلقين-بعد-فيديو-صادم/&#34;&gt;بالفيديو.. الشرطة الإسبانية&lt;br/&gt; تلاحق متسلقين بعد&lt;br/&gt; فيديو صادم&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/last/791452/19-11-2017-بالفيديو-روبوت-خارق-يقوم-بحركات-يعجز-عنها-معظم-البشر/&#34;&gt;بالفيديو.. روبوت خارق&lt;br/&gt; يقوم بحركات يعجز &lt;br/&gt;عنها معظم البشر!&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/kuwait-news/791402/18-11-2017-بالفيديو-أسواق-حلب-القديمة-تنفض-غبار-الحرب/&#34;&gt;بالفيديو.. أسواق حلب&lt;br/&gt; القديمة تنفض &lt;br/&gt;غبار الحرب&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/art-news/791345/18-11-2017-بالفيديو-بدر-محارب-أحب-المسرح-والتلفزيون-يوكل-كيك/&#34;&gt;بالفيديو.. بدر محارب:&lt;br/&gt; أحب المسرح.. &lt;br/&gt;والتلفزيون «يوكّل كيك»!&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/art-news/arabic-international/791453/19-11-2017-بالفيديو-لأول-مرة-سمية-الخشاب-ترد-خطفت-أحمد-سعد-ريم-البارودي/&#34;&gt;بالفيديو.. لأول مرة سمية الخشاب ترد: هل خطفت أحمد سعد من&lt;br/&gt; ريم البارودي؟&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/art-news/arabic-international/791455/19-11-2017-بالفيديو-دليل-براءة-شيرين-عبد-الوهاب/&#34;&gt;بالفيديو.. دليل براءة&lt;br/&gt; شيرين عبد الوهاب&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/last/791456/19-11-2017-هكذا-كيف-اعتقلوا-أستاذة-للعلوم-ذهبت-بعقل-تلميذ-وعاشرته/&#34;&gt;هكذا كيف اعتقلوا&lt;br/&gt; أستاذة للعلوم ذهبت&lt;br/&gt; بعقل تلميذ وعاشرته&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/last/791451/19-11-2017-نجاح-أول-عملية-زراعة-رأس-بشرية-وعلماء-تبعاتها-مرعبة/&#34;&gt;نجاح أول عملية زراعة&lt;br/&gt; رأس بشرية.. وعلماء: &lt;br/&gt;تبعاتها &#34;مرعبة&#34;&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/last/791454/19-11-2017-شاهد-غضب-فيديو-لحبار-يرقص-ألما-داخل-طبق-الطعام/&#34;&gt;شاهد غضب من فيديو&lt;br/&gt; لحبار يرقص ألما داخل&lt;br/&gt; طبق الطعام&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/last/791448/19-11-2017-لماذا-علينا-التوقف-تناول-الأرز/&#34;&gt;لماذا علينا التوقف&lt;br/&gt; عن تناول الأرز؟&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/last/791457/19-11-2017-العلماء-يكتشفون-طريقة-سهلة-لتقوية-شبكة-Wi-Fi-المنازل-تعرف-عليها/&#34;&gt;العلماء يكتشفون طريقة سهلة لتقوية شبكة Wi Fi في المنازل.. تعرف عليها&lt;/a&gt;&lt;/h2&gt;,
- &lt;h2 class=&#34;page-title CenterTextAlign&#34;&gt;&lt;a href=&#34;/ar/last/791458/19-11-2017-بالفيديو-شاهد-تغير-فصول-السنة-الفضاء-عاما/&#34;&gt;بالفيديو.. شاهد تغير&lt;br/&gt; فصول السنة من الفضاء في 20 عاماً&lt;/a&gt;&lt;/h2&gt;]</pre>
+<pre>[&lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/official/823222/03-04-2018-بالفيديو-الأمير-بحث-رئيس-جزر-القمر-التعاون-الثنائي-والقضايا-المشتركة/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823245/03-04-2018-توظيف-مواطن-منهم-تربوي-فورا/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/parliament/823162/03-04-2018-بالفيديو-حقوق-الإنسان-العفو-الأميري-الأكبر-منذ-سنوات/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/education/823194/03-04-2018-التربية-لموظفي-البيئة-حق-دخول-كل-الأماكن-والاستعانة-برجال-الشرطة-إذا-اقتضى-الأمر/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823262/03-04-2018-مجلس-الأمة-يصوت-بالموافقة-الديوان-الوطني-لحقوق-الإنسان-بمداولته-الثانية-ويحيله-إلى-الحكومة/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823264/04-04-2018-توجه-لجلب-العمالة-المنزلية-الهند-وفيتنام/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-community/occasions-events/823107/03-04-2018-بالفيديو-دار-الوفاء-الأنباء-تحتفي-بكوكبة-قدامى-العاملين-بها-ممن-أمضوا-أكثر-عاما-الخدمة/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/world-news/823283/04-04-2018-فيديو-منفر-لطفلة-لبنانية-تدخن-بمباركة-والديها/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823272/04-04-2018-الأنباء-تنشر-أسماء-دفعة-جديدة-رشحها-ديوان-الخدمة-للعمل-لدى-الجهات-الحكومية/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823271/04-04-2018-الروضان-تحديد-تكلفة-العمالة-بـ-دينارا-ليس-نهائيا/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/last/823279/04-04-2018-بالفيديو-امرأة-معطف-الفرو-تأخذ-صورة-دب-وسط-الثلج-تستفز-المتابعين/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/sport-news/world-sports/823282/04-04-2018-رسميا-فيفا-يهدد-اللاعب-محمد-صلاح-بالاستبعاد-المونديال-وغليان-مصري/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/world-news/823289/04-04-2018-بالفيديو-بلدية-دبي-تكشف-حقيقة-الفيديو-المتداول-عنالبيض-البلاستيكي-/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/arabic-international/823278/04-04-2018-منشور-يشعل-النار-بين-أحلام-وإليسا-والرد-تغريدة/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/arabic-international/823281/04-04-2018-الفنان-محمد-عبده-يغنى-الهواء-احتفالا-بفوز-السيسى-بولاية-رئاسية-ثانية/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/arabic-international/823286/04-04-2018-بالصور-هذا-سعر-جاكيت-نانسي-عجرم-فيديو-كليبها-الجديد-الذي-شغل-مواقع-التواصل-الاجتماعي-\u200e/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/last/823284/04-04-2018-شاهد-البذخ-ثم-البذخ-هكذا-احتفلت-عائلة-كارداشيان-بعيد-الفصح/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/world-news/823287/04-04-2018-مفاجأة-رحيل-روائي-مصري-شهير-تنبأ-بموعد-وتاريخ-وفاته-فى-روايته/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/823290/04-04-2018-بالفيديو-والصورهكذا-احتفلت-أمل-العوضي-بميلادها-وهذا-عمرها-الحقيقي/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/last/823285/04-04-2018-صورة-رضيع-تجتاح-مواقع-التواصل-الاجتماعي-والسبب/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/arabic-international/823288/04-04-2018-بالفيديو-نجمة-عربية-تعترف-للمرة-الأولى-تعرضها-للتحرش-خلال-حملها/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/world-news/823280/04-04-2018-فيديو-لطالب-يمني-جامعي-بالهند-ضربوه-وسحلوه-بهجوم-جماعي/&#39;&gt;]</pre>
 </div>
 
 </div>
@@ -20790,7 +21354,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Lets experiment how to get the text</span>
@@ -20805,49 +21369,11 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[92]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;هيئة مواجهة الأزمات.. بمباركة حكومية&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now the url path</span>
-<span class="n">h2_tags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[96]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;/ar/kuwait-news/791415/18-11-2017-هيئة-مواجهة-الأزمات-بمباركة-حكومية/&#39;</pre>
+<pre>&#39;بالفيديو.. الأمير بحث مع رئيس جزر القمر التعاون الثنائي والقضايا المشتركة&#39;</pre>
 </div>
 
 </div>
@@ -20858,14 +21384,185 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now the url path</span>
+<span class="n">h2_tags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;/ar/kuwait-news/official/823222/03-04-2018-بالفيديو-الأمير-بحث-رئيس-جزر-القمر-التعاون-الثنائي-والقضايا-المشتركة/&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use pop to get the item, this is a set</span>
+<span class="n">h2_tags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">links</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;/ar/kuwait-news/official/823222/03-04-2018-بالفيديو-الأمير-بحث-رئيس-جزر-القمر-التعاون-الثنائي-والقضايا-المشتركة/&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use pop to get the item, this is a set</span>
+<span class="n">h2_tags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">absolute_links</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;http://www.alanba.com.kw/ar/kuwait-news/official/823222/03-04-2018-بالفيديو-الأمير-بحث-رئيس-جزر-القمر-التعاون-الثنائي-والقضايا-المشتركة/&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Alternatively you can use XPath to select items</span>
+<span class="c1"># use single quotes, because xpath uses double quotes</span>
+<span class="c1"># remove all indices like [1] ..etc</span>
+<span class="c1"># Original xpath: //*[@id=&quot;content&quot;]/section[1]/div/div/article[1]/div/h2/a</span>
+<span class="n">h2_tags</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//*[@id=&quot;content&quot;]/section/div/div/article/div/h2/a&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># everything else is the same</span>
+<span class="n">h2_tags</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/official/823222/03-04-2018-بالفيديو-الأمير-بحث-رئيس-جزر-القمر-التعاون-الثنائي-والقضايا-المشتركة/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823245/03-04-2018-توظيف-مواطن-منهم-تربوي-فورا/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/parliament/823162/03-04-2018-بالفيديو-حقوق-الإنسان-العفو-الأميري-الأكبر-منذ-سنوات/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/education/823194/03-04-2018-التربية-لموظفي-البيئة-حق-دخول-كل-الأماكن-والاستعانة-برجال-الشرطة-إذا-اقتضى-الأمر/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823262/03-04-2018-مجلس-الأمة-يصوت-بالموافقة-الديوان-الوطني-لحقوق-الإنسان-بمداولته-الثانية-ويحيله-إلى-الحكومة/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823264/04-04-2018-توجه-لجلب-العمالة-المنزلية-الهند-وفيتنام/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-community/occasions-events/823107/03-04-2018-بالفيديو-دار-الوفاء-الأنباء-تحتفي-بكوكبة-قدامى-العاملين-بها-ممن-أمضوا-أكثر-عاما-الخدمة/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/world-news/823283/04-04-2018-فيديو-منفر-لطفلة-لبنانية-تدخن-بمباركة-والديها/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823272/04-04-2018-الأنباء-تنشر-أسماء-دفعة-جديدة-رشحها-ديوان-الخدمة-للعمل-لدى-الجهات-الحكومية/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/kuwait-news/823271/04-04-2018-الروضان-تحديد-تكلفة-العمالة-بـ-دينارا-ليس-نهائيا/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/last/823279/04-04-2018-بالفيديو-امرأة-معطف-الفرو-تأخذ-صورة-دب-وسط-الثلج-تستفز-المتابعين/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/sport-news/world-sports/823282/04-04-2018-رسميا-فيفا-يهدد-اللاعب-محمد-صلاح-بالاستبعاد-المونديال-وغليان-مصري/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/world-news/823289/04-04-2018-بالفيديو-بلدية-دبي-تكشف-حقيقة-الفيديو-المتداول-عنالبيض-البلاستيكي-/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/arabic-international/823278/04-04-2018-منشور-يشعل-النار-بين-أحلام-وإليسا-والرد-تغريدة/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/arabic-international/823281/04-04-2018-الفنان-محمد-عبده-يغنى-الهواء-احتفالا-بفوز-السيسى-بولاية-رئاسية-ثانية/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/arabic-international/823286/04-04-2018-بالصور-هذا-سعر-جاكيت-نانسي-عجرم-فيديو-كليبها-الجديد-الذي-شغل-مواقع-التواصل-الاجتماعي-\u200e/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/last/823284/04-04-2018-شاهد-البذخ-ثم-البذخ-هكذا-احتفلت-عائلة-كارداشيان-بعيد-الفصح/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/world-news/823287/04-04-2018-مفاجأة-رحيل-روائي-مصري-شهير-تنبأ-بموعد-وتاريخ-وفاته-فى-روايته/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/823290/04-04-2018-بالفيديو-والصورهكذا-احتفلت-أمل-العوضي-بميلادها-وهذا-عمرها-الحقيقي/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/last/823285/04-04-2018-صورة-رضيع-تجتاح-مواقع-التواصل-الاجتماعي-والسبب/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/art-news/arabic-international/823288/04-04-2018-بالفيديو-نجمة-عربية-تعترف-للمرة-الأولى-تعرضها-للتحرش-خلال-حملها/&#39;&gt;,
+ &lt;Element &#39;a&#39; href=&#39;/ar/world-news/823280/04-04-2018-فيديو-لطالب-يمني-جامعي-بالهند-ضربوه-وسحلوه-بهجوم-جماعي/&#39;&gt;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Time-to-construct-a-DataFrame-from-the-HTML-data">Time to construct a DataFrame from the HTML data<a class="anchor-link" href="#Time-to-construct-a-DataFrame-from-the-HTML-data">&#182;</a></h2><h3 id="We-need-to-get:">We need to get:<a class="anchor-link" href="#We-need-to-get:">&#182;</a></h3><ul>
+<li>The text of the headline</li>
+<li>The href (URL) of the headline</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Now use list comprehension to construct your list of records</span>
 <span class="n">headline_list</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
         <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
-        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">absolute_links</span><span class="o">.</span><span class="n">pop</span><span class="p">(),</span> <span class="c1"># remember to use pop with sets</span>
     <span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">h2_tags</span>
 <span class="p">]</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">headline_list</span><span class="p">)</span>
@@ -20879,11 +21576,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[97]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -20898,113 +21591,113 @@ a.anchor-link {
   <tbody>
     <tr>
       <th>0</th>
-      <td>/ar/kuwait-news/791415/18-11-2017-هيئة-مواجهة-...</td>
-      <td>هيئة مواجهة الأزمات.. بمباركة حكومية</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-news/offici...</td>
+      <td>بالفيديو.. الأمير بحث مع رئيس جزر القمر التعاو...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>/ar/kuwait-news/791401/18-11-2017-المرزوق-أمطا...</td>
-      <td>المرزوق: أمطار لا مثيل لها الثلاثاء المقبل وتس...</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-news/823245...</td>
+      <td>توظيف 5500 مواطن منهم 2500 تربوي فوراً</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>/ar/kuwait-news/791371/18-11-2017-بالفيديو-الط...</td>
-      <td>بالفيديو.. الطيران الشراعي زيَّن سماء الكويت ب...</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-news/parlia...</td>
+      <td>بالفيديو.. «حقوق الإنسان»:\nالعفو الأميري.. ال...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>/ar/kuwait-community/occasions-events/791275/1...</td>
-      <td>سلطنة عُمان تحتفل اليوم بعيدها الوطني الـ 47: ...</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-news/educat...</td>
+      <td>«التربية»: لموظفي «البيئة»\nحق دخول كل الأماكن...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>/ar/kuwait-news/791387/18-11-2017-بالفيديو-حرك...</td>
-      <td>بالفيديو.. حركة «BDS الكويت»: المقاطعة أداة مه...</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-news/823262...</td>
+      <td>مجلس الأمة يصوّت بالموافقة على "الديوان الوطني...</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>/ar/kuwait-news/791408/18-11-2017-بالفيديو-معر...</td>
-      <td>بالفيديو.. معرض الكتاب يزيل الحواجز بين الطفل ...</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-news/823264...</td>
+      <td>"الداخلية" ترفع الحظر عن دخول عاملات المنازل ا...</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>/ar/arabic-international-news/lebanon-news/791...</td>
-      <td>الحريري بعد لقاء ماكرون: سأحتفل بعيد الاستقلال...</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-community/o...</td>
+      <td>بالفيديو.. دار الوفاء.. «الأنباء» تحتفي بكوكبة...</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>/ar/kuwait-news/791437/19-11-2017-وزير-الإعلام...</td>
-      <td>المذيع وليد المؤمن في ذمة الله</td>
+      <td>http://www.alanba.com.kw/ar/world-news/823283/...</td>
+      <td>فيديو منفر\nلطفلة لبنانية تدخن..\n"بمباركة" وا...</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>/ar/kuwait-news/791461/19-11-2017-الحربي-السما...</td>
-      <td>جمال الحربي: لن نفرج عن اي منتج زراعي مصري الا...</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-news/823272...</td>
+      <td>"الأنباء" تنشر أسماء دفعة جديدة رشحها "ديوان ا...</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>/ar/last/791450/19-11-2017-بالفيديو-شاهدت-أحدا...</td>
-      <td>بالفيديو.. هل شاهدت أحداً محظوظاً كهذا الصبي؟ ...</td>
+      <td>http://www.alanba.com.kw/ar/kuwait-news/823271...</td>
+      <td>الروضان يُحدد السقف الأعلى لاستقدام العمالة ال...</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>/ar/world-news/791447/19-11-2017-بالفيديو-الشر...</td>
-      <td>بالفيديو.. الشرطة الإسبانية تلاحق متسلقين بعد ...</td>
+      <td>http://www.alanba.com.kw/ar/last/823279/04-04-...</td>
+      <td>بالفيديو.. امرأة في معطف من الفرو تأخذ صورة مع...</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>/ar/last/791452/19-11-2017-بالفيديو-روبوت-خارق...</td>
-      <td>بالفيديو.. روبوت خارق يقوم بحركات يعجز عنها مع...</td>
+      <td>http://www.alanba.com.kw/ar/sport-news/world-s...</td>
+      <td>رسمياً "فيفا" يهدد اللاعب محمد صلاح بالاستبعاد...</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>/ar/kuwait-news/791402/18-11-2017-بالفيديو-أسو...</td>
-      <td>بالفيديو.. أسواق حلب القديمة تنفض غبار الحرب</td>
+      <td>http://www.alanba.com.kw/ar/world-news/823289/...</td>
+      <td>بالفيديو.. بلدية دبي تكشف\nحقيقة الفيديو المتد...</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>/ar/art-news/791345/18-11-2017-بالفيديو-بدر-مح...</td>
-      <td>بالفيديو.. بدر محارب: أحب المسرح.. والتلفزيون ...</td>
+      <td>http://www.alanba.com.kw/ar/art-news/arabic-in...</td>
+      <td>منشور يشعل النار\nبين أحلام وإليسا.. والرد تغريدة</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>/ar/art-news/arabic-international/791453/19-11...</td>
-      <td>بالفيديو.. لأول مرة سمية الخشاب ترد: هل خطفت أ...</td>
+      <td>http://www.alanba.com.kw/ar/art-news/arabic-in...</td>
+      <td>بالفيديو.. محمد عبده يغنى\nعلى الهواء احتفالا ...</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>/ar/art-news/arabic-international/791455/19-11...</td>
-      <td>بالفيديو.. دليل براءة شيرين عبد الوهاب</td>
+      <td>http://www.alanba.com.kw/ar/art-news/arabic-in...</td>
+      <td>بالصور.. هذا هو سعر جاكيت نانسي عجرم في فيديو ...</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>/ar/last/791456/19-11-2017-هكذا-كيف-اعتقلوا-أس...</td>
-      <td>هكذا كيف اعتقلوا أستاذة للعلوم ذهبت بعقل تلميذ...</td>
+      <td>http://www.alanba.com.kw/ar/last/823284/04-04-...</td>
+      <td>شاهد: البذخ ثم البذخ..\nهكذا احتفلت عائلة كارد...</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>/ar/last/791451/19-11-2017-نجاح-أول-عملية-زراع...</td>
-      <td>نجاح أول عملية زراعة رأس بشرية.. وعلماء: تبعات...</td>
+      <td>http://www.alanba.com.kw/ar/world-news/823287/...</td>
+      <td>مفاجأة ..رحيل روائي مصري\nشهير تنبأ بموعد وتار...</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>/ar/last/791454/19-11-2017-شاهد-غضب-فيديو-لحبا...</td>
-      <td>شاهد غضب من فيديو لحبار يرقص ألما داخل طبق الطعام</td>
+      <td>http://www.alanba.com.kw/ar/art-news/823290/04...</td>
+      <td>بالفيديو والصور..هكذا احتفلت\nأمل العوضي بميلا...</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>/ar/last/791448/19-11-2017-لماذا-علينا-التوقف-...</td>
-      <td>لماذا علينا التوقف عن تناول الأرز؟</td>
+      <td>http://www.alanba.com.kw/ar/last/823285/04-04-...</td>
+      <td>صورة رضيع تجتاح مواقع التواصل الاجتماعي.. والس...</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>/ar/last/791457/19-11-2017-العلماء-يكتشفون-طري...</td>
-      <td>العلماء يكتشفون طريقة سهلة لتقوية شبكة Wi Fi ف...</td>
+      <td>http://www.alanba.com.kw/ar/art-news/arabic-in...</td>
+      <td>بالفيديو.. نجمة عربية تعترف للمرة الاولى عن تع...</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>/ar/last/791458/19-11-2017-بالفيديو-شاهد-تغير-...</td>
-      <td>بالفيديو.. شاهد تغير فصول السنة من الفضاء في 2...</td>
+      <td>http://www.alanba.com.kw/ar/world-news/823280/...</td>
+      <td>فيديو لطالب يمني جامعي بالهند ضربوه وسحلوه بهج...</td>
     </tr>
   </tbody>
 </table>
@@ -21017,7 +21710,8 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -21049,7 +21743,8 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -21065,13 +21760,573 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Final-Note">Final Note<a class="anchor-link" href="#Final-Note">&#182;</a></h1><ul>
-<li>Your data might be collected in different files</li>
-<li>Refer back to your previous classes and assignments on ways to combine data into a single dataframe</li>
+<h1 id="Simple-Analysis-of-Text-Data">Simple Analysis of Text Data<a class="anchor-link" href="#Simple-Analysis-of-Text-Data">&#182;</a></h1><h2 id="You-must">You must<a class="anchor-link" href="#You-must">&#182;</a></h2><ol>
+<li>Split the text</li>
+<li>Strip any spaces around words</li>
+<li>Do analysis on list of words, like counting</li>
+</ol>
+<p><strong>TIP:</strong> Remove frequently used words that won't add value to analysis like 'is'</p>
+<p>These are called stopwords</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get all the words</span>
+<span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">mydf</span><span class="o">.</span><span class="n">title</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">title</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>بالفيديو..
+الأمير
+بحث
+مع
+رئيس
+جزر
+القمر
+التعاون
+الثنائي
+والقضايا
+المشتركة
+توظيف
+5500
+مواطن
+منهم
+2500
+تربوي
+فوراً
+بالفيديو..
+«حقوق
+الإنسان»:
+العفو
+الأميري..
+الأكبر
+منذ
+سنوات
+«التربية»:
+لموظفي
+«البيئة»
+حق
+دخول
+كل
+الأماكن
+والاستعانة
+برجال
+الشرطة
+إذا
+اقتضى
+الأمر
+مجلس
+الأمة
+يصوّت
+بالموافقة
+على
+&#34;الديوان
+الوطني
+لحقوق
+الإنسان&#34;
+بمداولته
+الثانية
+ويحيله
+إلى
+الحكومة
+&#34;الداخلية&#34;
+ترفع
+الحظر
+عن
+دخول
+عاملات
+المنازل
+الإثيوبيات
+إلى
+البلاد
+بالفيديو..
+دار
+الوفاء..
+«الأنباء»
+تحتفي
+بكوكبة
+من
+قدامى
+العاملين
+بها
+ممن
+أمضوا
+أكثر
+من
+25
+عاماً
+في
+الخدمة
+فيديو
+منفر
+لطفلة
+لبنانية
+تدخن..
+&#34;بمباركة&#34;
+والديها
+&#34;الأنباء&#34;
+تنشر
+أسماء
+دفعة
+جديدة
+رشحها
+&#34;ديوان
+الخدمة&#34;
+للعمل
+لدى
+الجهات
+الحكومية
+الروضان
+يُحدد
+السقف
+الأعلى
+لاستقدام
+العمالة
+المنزلية
+عن
+طريق
+مكاتب
+الخدم
+بـ990
+ديناراً
+بالفيديو..
+امرأة
+في
+معطف
+من
+الفرو
+تأخذ
+صورة
+مع
+دب
+وسط
+الثلج
+تستفز
+المتابعين
+رسمياً
+&#34;فيفا&#34;
+يهدد
+اللاعب
+محمد
+صلاح
+بالاستبعاد
+من
+المونديال
+..
+وغليان
+مصري
+بالفيديو..
+بلدية
+دبي
+تكشف
+حقيقة
+الفيديو
+المتداول
+عن
+&#34;
+البيض
+البلاستيكي
+&#34;
+منشور
+يشعل
+النار
+بين
+أحلام
+وإليسا..
+والرد
+تغريدة
+بالفيديو..
+محمد
+عبده
+يغنى
+على
+الهواء
+احتفالا
+بفوز
+السيسى
+بولاية
+رئاسية
+ثانية
+بالصور..
+هذا
+هو
+سعر
+جاكيت
+نانسي
+عجرم
+في
+فيديو
+كليبها
+الجديد
+الذي
+شغل
+مواقع
+التواصل
+الاجتماعي
+‎
+شاهد:
+البذخ
+ثم
+البذخ..
+هكذا
+احتفلت
+عائلة
+كارداشيان
+بعيد
+الفصح
+مفاجأة
+..رحيل
+روائي
+مصري
+شهير
+تنبأ
+بموعد
+وتاريخ
+وفاته
+فى
+روايته
+بالفيديو
+والصور..هكذا
+احتفلت
+أمل
+العوضي
+بميلادها..
+وهذا
+عمرها
+الحقيقي
+صورة
+رضيع
+تجتاح
+مواقع
+التواصل
+الاجتماعي..
+والسبب!!
+بالفيديو..
+نجمة
+عربية
+تعترف
+للمرة
+الاولى
+عن
+تعرضها
+للتحرش
+خلال
+حملها
+فيديو
+لطالب
+يمني
+جامعي
+بالهند
+ضربوه
+وسحلوه
+بهجوم
+جماعي
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># count the words</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">mydf</span><span class="o">.</span><span class="n">title</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">title</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="n">cw</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="c1"># word exists, then add one</span>
+        <span class="c1"># otherwise, it is the first time we count the word</span>
+        <span class="k">if</span> <span class="n">cw</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">cw</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">cw</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">counter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[39]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;&#34;&#39;: 2,
+ &#39;&#34;الأنباء&#34;&#39;: 1,
+ &#39;&#34;الداخلية&#34;&#39;: 1,
+ &#39;&#34;الديوان&#39;: 1,
+ &#39;&#34;بمباركة&#34;&#39;: 1,
+ &#39;&#34;ديوان&#39;: 1,
+ &#39;&#34;فيفا&#34;&#39;: 1,
+ &#39;..&#39;: 1,
+ &#39;..رحيل&#39;: 1,
+ &#39;25&#39;: 1,
+ &#39;2500&#39;: 1,
+ &#39;5500&#39;: 1,
+ &#39;«الأنباء»&#39;: 1,
+ &#39;«البيئة»&#39;: 1,
+ &#39;«التربية»:&#39;: 1,
+ &#39;«حقوق&#39;: 1,
+ &#39;أحلام&#39;: 1,
+ &#39;أسماء&#39;: 1,
+ &#39;أكثر&#39;: 1,
+ &#39;أمضوا&#39;: 1,
+ &#39;أمل&#39;: 1,
+ &#39;إذا&#39;: 1,
+ &#39;إلى&#39;: 2,
+ &#39;احتفالا&#39;: 1,
+ &#39;احتفلت&#39;: 2,
+ &#39;اقتضى&#39;: 1,
+ &#39;الأعلى&#39;: 1,
+ &#39;الأكبر&#39;: 1,
+ &#39;الأماكن&#39;: 1,
+ &#39;الأمة&#39;: 1,
+ &#39;الأمر&#39;: 1,
+ &#39;الأمير&#39;: 1,
+ &#39;الأميري..&#39;: 1,
+ &#39;الإثيوبيات&#39;: 1,
+ &#39;الإنسان&#34;&#39;: 1,
+ &#39;الإنسان»:&#39;: 1,
+ &#39;الاجتماعي&#39;: 1,
+ &#39;الاجتماعي..&#39;: 1,
+ &#39;الاولى&#39;: 1,
+ &#39;البذخ&#39;: 1,
+ &#39;البذخ..&#39;: 1,
+ &#39;البلاد&#39;: 1,
+ &#39;البلاستيكي&#39;: 1,
+ &#39;البيض&#39;: 1,
+ &#39;التعاون&#39;: 1,
+ &#39;التواصل&#39;: 2,
+ &#39;الثانية&#39;: 1,
+ &#39;الثلج&#39;: 1,
+ &#39;الثنائي&#39;: 1,
+ &#39;الجديد&#39;: 1,
+ &#39;الجهات&#39;: 1,
+ &#39;الحظر&#39;: 1,
+ &#39;الحقيقي&#39;: 1,
+ &#39;الحكومة&#39;: 1,
+ &#39;الحكومية&#39;: 1,
+ &#39;الخدم&#39;: 1,
+ &#39;الخدمة&#39;: 1,
+ &#39;الخدمة&#34;&#39;: 1,
+ &#39;الذي&#39;: 1,
+ &#39;الروضان&#39;: 1,
+ &#39;السقف&#39;: 1,
+ &#39;السيسى&#39;: 1,
+ &#39;الشرطة&#39;: 1,
+ &#39;العاملين&#39;: 1,
+ &#39;العفو&#39;: 1,
+ &#39;العمالة&#39;: 1,
+ &#39;العوضي&#39;: 1,
+ &#39;الفرو&#39;: 1,
+ &#39;الفصح&#39;: 1,
+ &#39;الفيديو&#39;: 1,
+ &#39;القمر&#39;: 1,
+ &#39;اللاعب&#39;: 1,
+ &#39;المتابعين&#39;: 1,
+ &#39;المتداول&#39;: 1,
+ &#39;المشتركة&#39;: 1,
+ &#39;المنازل&#39;: 1,
+ &#39;المنزلية&#39;: 1,
+ &#39;المونديال&#39;: 1,
+ &#39;النار&#39;: 1,
+ &#39;الهواء&#39;: 1,
+ &#39;الوطني&#39;: 1,
+ &#39;الوفاء..&#39;: 1,
+ &#39;امرأة&#39;: 1,
+ &#39;بالاستبعاد&#39;: 1,
+ &#39;بالصور..&#39;: 1,
+ &#39;بالفيديو&#39;: 1,
+ &#39;بالفيديو..&#39;: 7,
+ &#39;بالموافقة&#39;: 1,
+ &#39;بالهند&#39;: 1,
+ &#39;بحث&#39;: 1,
+ &#39;برجال&#39;: 1,
+ &#39;بعيد&#39;: 1,
+ &#39;بـ990&#39;: 1,
+ &#39;بفوز&#39;: 1,
+ &#39;بكوكبة&#39;: 1,
+ &#39;بلدية&#39;: 1,
+ &#39;بمداولته&#39;: 1,
+ &#39;بموعد&#39;: 1,
+ &#39;بميلادها..&#39;: 1,
+ &#39;بها&#39;: 1,
+ &#39;بهجوم&#39;: 1,
+ &#39;بولاية&#39;: 1,
+ &#39;بين&#39;: 1,
+ &#39;تأخذ&#39;: 1,
+ &#39;تجتاح&#39;: 1,
+ &#39;تحتفي&#39;: 1,
+ &#39;تدخن..&#39;: 1,
+ &#39;تربوي&#39;: 1,
+ &#39;ترفع&#39;: 1,
+ &#39;تستفز&#39;: 1,
+ &#39;تعترف&#39;: 1,
+ &#39;تعرضها&#39;: 1,
+ &#39;تغريدة&#39;: 1,
+ &#39;تكشف&#39;: 1,
+ &#39;تنبأ&#39;: 1,
+ &#39;تنشر&#39;: 1,
+ &#39;توظيف&#39;: 1,
+ &#39;ثانية&#39;: 1,
+ &#39;ثم&#39;: 1,
+ &#39;جاكيت&#39;: 1,
+ &#39;جامعي&#39;: 1,
+ &#39;جديدة&#39;: 1,
+ &#39;جزر&#39;: 1,
+ &#39;جماعي&#39;: 1,
+ &#39;حق&#39;: 1,
+ &#39;حقيقة&#39;: 1,
+ &#39;حملها&#39;: 1,
+ &#39;خلال&#39;: 1,
+ &#39;دار&#39;: 1,
+ &#39;دب&#39;: 1,
+ &#39;دبي&#39;: 1,
+ &#39;دخول&#39;: 2,
+ &#39;دفعة&#39;: 1,
+ &#39;ديناراً&#39;: 1,
+ &#39;رئاسية&#39;: 1,
+ &#39;رئيس&#39;: 1,
+ &#39;رسمياً&#39;: 1,
+ &#39;رشحها&#39;: 1,
+ &#39;رضيع&#39;: 1,
+ &#39;روائي&#39;: 1,
+ &#39;روايته&#39;: 1,
+ &#39;سعر&#39;: 1,
+ &#39;سنوات&#39;: 1,
+ &#39;شاهد:&#39;: 1,
+ &#39;شغل&#39;: 1,
+ &#39;شهير&#39;: 1,
+ &#39;صلاح&#39;: 1,
+ &#39;صورة&#39;: 2,
+ &#39;ضربوه&#39;: 1,
+ &#39;طريق&#39;: 1,
+ &#39;عائلة&#39;: 1,
+ &#39;عاماً&#39;: 1,
+ &#39;عاملات&#39;: 1,
+ &#39;عبده&#39;: 1,
+ &#39;عجرم&#39;: 1,
+ &#39;عربية&#39;: 1,
+ &#39;على&#39;: 2,
+ &#39;عمرها&#39;: 1,
+ &#39;عن&#39;: 4,
+ &#39;فوراً&#39;: 1,
+ &#39;فى&#39;: 1,
+ &#39;في&#39;: 3,
+ &#39;فيديو&#39;: 3,
+ &#39;قدامى&#39;: 1,
+ &#39;كارداشيان&#39;: 1,
+ &#39;كل&#39;: 1,
+ &#39;كليبها&#39;: 1,
+ &#39;لاستقدام&#39;: 1,
+ &#39;لبنانية&#39;: 1,
+ &#39;لحقوق&#39;: 1,
+ &#39;لدى&#39;: 1,
+ &#39;لطالب&#39;: 1,
+ &#39;لطفلة&#39;: 1,
+ &#39;للتحرش&#39;: 1,
+ &#39;للعمل&#39;: 1,
+ &#39;للمرة&#39;: 1,
+ &#39;لموظفي&#39;: 1,
+ &#39;مجلس&#39;: 1,
+ &#39;محمد&#39;: 2,
+ &#39;مصري&#39;: 2,
+ &#39;مع&#39;: 2,
+ &#39;معطف&#39;: 1,
+ &#39;مفاجأة&#39;: 1,
+ &#39;مكاتب&#39;: 1,
+ &#39;ممن&#39;: 1,
+ &#39;من&#39;: 4,
+ &#39;منذ&#39;: 1,
+ &#39;منشور&#39;: 1,
+ &#39;منفر&#39;: 1,
+ &#39;منهم&#39;: 1,
+ &#39;مواطن&#39;: 1,
+ &#39;مواقع&#39;: 2,
+ &#39;نانسي&#39;: 1,
+ &#39;نجمة&#39;: 1,
+ &#39;هذا&#39;: 1,
+ &#39;هكذا&#39;: 1,
+ &#39;هو&#39;: 1,
+ &#39;وإليسا..&#39;: 1,
+ &#39;والاستعانة&#39;: 1,
+ &#39;والديها&#39;: 1,
+ &#39;والرد&#39;: 1,
+ &#39;والسبب!!&#39;: 1,
+ &#39;والصور..هكذا&#39;: 1,
+ &#39;والقضايا&#39;: 1,
+ &#39;وتاريخ&#39;: 1,
+ &#39;وسحلوه&#39;: 1,
+ &#39;وسط&#39;: 1,
+ &#39;وغليان&#39;: 1,
+ &#39;وفاته&#39;: 1,
+ &#39;وهذا&#39;: 1,
+ &#39;ويحيله&#39;: 1,
+ &#39;يشعل&#39;: 1,
+ &#39;يصوّت&#39;: 1,
+ &#39;يغنى&#39;: 1,
+ &#39;يمني&#39;: 1,
+ &#39;يهدد&#39;: 1,
+ &#39;يُحدد&#39;: 1,
+ &#39;\u200e&#39;: 1}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="For-more-on-textual-analysis">For more on textual analysis<a class="anchor-link" href="#For-more-on-textual-analysis">&#182;</a></h2><ul>
+<li>Search on Python Natural Language Processing</li>
+<li>NLP library provides some very useful functions</li>
 </ul>
 
 </div>
@@ -21101,7 +22356,8 @@ require(
             progress: true,
             history: true,
 
-            transition: "slide",
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
@@ -21121,25 +22377,13 @@ require(
 
         Reveal.addEventListener('slidechanged', update);
 
-        function setScrollingSlide() {
-            var scroll = false
-            if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
-              $('section.present').find('section')
-                .filter(function() {
-                  return $(this).height() > h;
-                })
-                .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
-            }
-        }
+        var update_scroll = function(event){
+          $(".reveal").scrollTop(0);
+        };
 
-        // check and set the scrolling slide every time the slide change
-        Reveal.addEventListener('slidechanged', setScrollingSlide);
+        Reveal.addEventListener('slidechanged', update_scroll);
 
     }
-
 );
 </script>
 
