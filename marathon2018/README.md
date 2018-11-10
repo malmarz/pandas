@@ -3,7 +3,7 @@
 ### Fall 2018
 
 - Instructor: Mohammad AlMarzouq
-- website: [bit.ly/mara2018](http://bit.ly/mara2018)
+- website: [http://bit.ly/cba_m2018](http://bit.ly/cba_m2018)
 
 |Week | Topic        | Links  |
 | :---: | :-------------: |:-------------:|
