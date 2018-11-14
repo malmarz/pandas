@@ -2,6 +2,8 @@
 ## Data Analysis & Visualization Using Python
 ### Fall 2018
 
+# Wednesday class (14th Nov.) is postponed to Monday (19th Nov.) same time and location
+
 - Instructor: Mohammad AlMarzouq
 - website: [http://bit.ly/cba_m2018](http://bit.ly/cba_m2018)
 
