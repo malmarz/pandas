@@ -1,32 +1,27 @@
-# QMIS 492
-## Data Analysis & Visualization
-### Spring 2018
+# Pandas Primer
+## ISOM 230 - Fall 2020
 
 - Instructor: Mohammad AlMarzouq
-- Syllabus: [bit.ly/mis492_syl](http://bit.ly/mis492_syl)
+
 
 |Week | Topic        | Links  |
 | :---: | :-------------: |:-------------:|
-| na | Introduction     | [slides](http://qmisr.github.io/mis492/spring2018/intro.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/intro.pdf)  
-| 1 | PyReview| [slides](http://qmisr.github.io/mis492/spring2018/week1.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/week1.pdf) -  [notebook](http://qmisr.github.io/mis492/spring2018/week1.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/week1.ipynb)
-| 2 | Exploratory Data Analysis | [slides](http://qmisr.github.io/mis492/spring2018/week2.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/week2.pdf)
-| 3 | Pandas | [slides](http://qmisr.github.io/mis492/spring2018/week3.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/week3.pdf) -  [notebook](http://qmisr.github.io/mis492/spring2018/week3.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/week3.ipynb)
-| 4 | Data Manipulation | [slides](http://qmisr.github.io/mis492/spring2018/week4.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/week4.pdf) -  [notebook](http://qmisr.github.io/mis492/spring2018/week4.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/week4.ipynb)
-| 5 | Review Assignment |  [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/week5_hw.ipynb)|
-| 6 | Advanced Data Manipulation | [slides](http://qmisr.github.io/mis492/spring2018/week5.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/week5.pdf) -  [notebook](http://qmisr.github.io/mis492/spring2018/week5.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/week5.ipynb)|
-| 7 | Data Visualization | [slides](http://qmisr.github.io/mis492/spring2018/week6.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/week6.pdf) -  [notebook](http://qmisr.github.io/mis492/spring2018/week6.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/week6.ipynb)|
-| 8 | Multivariate Data Visualization | [slides](http://qmisr.github.io/mis492/spring2018/week7.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/week7.pdf) -  [notebook](http://qmisr.github.io/mis492/spring2018/week7.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/week7.ipynb)|
-| 9 | Review Assignments | [birdstrikes](http://qmisr.github.io/mis492/spring2018/birdstrikes.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/birdstrikes.ipynb) [movies](http://qmisr.github.io/mis492/spring2018/movies.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/movies.ipynb)
-| 10 | Online Data Collection | [slides](http://qmisr.github.io/mis492/spring2018/week10.slides.html) -  [pdf](http://qmisr.github.io/mis492/spring2018/week10.pdf) -  [notebook](http://qmisr.github.io/mis492/spring2018/week10.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/week10.ipynb)|
+| 1 | PyReview & Tips| [slides](http://qmisr.github.io/mis492/isom230/mod1.slides.html) -  [pdf](http://qmisr.github.io/mis492/isom230/mod1.pdf) -  [notebook](http://qmisr.github.io/mis492/isom230/mod1.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=marathon2018/mod1.ipynb)
+| 2 | Exploratory Data Analysis | [slides](http://qmisr.github.io/mis492/isom230/mod2.slides.html) -  [pdf](http://qmisr.github.io/mis492/isom230/mod2.pdf)
+| 3 | Pandas | [slides](http://qmisr.github.io/mis492/isom230/mod3.slides.html) -  [pdf](http://qmisr.github.io/mis492/isom230/mod3.pdf) -  [notebook](http://qmisr.github.io/mis492/isom230/week3.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=marathon2018/mod3.ipynb)
+| 4 | Data Visualization | [slides](http://qmisr.github.io/mis492/isom230/mod4.slides.html) -  [pdf](http://qmisr.github.io/mis492/isom230/mod4.pdf) -  [notebook](http://qmisr.github.io/mis492/isom230/mod4.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=marathon2018/mod4.ipynb)
 
+# Other Important Pandas Tutorials
+- [PyData Pandas Introduction](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html#intro-to-pandas)  _**Highly recommended, complete the introduction steps**_
+- [Greg Reda's 3-part Pandas Inroduction](https://gregreda.com/2013/10/26/intro-to-pandas-data-structures/)
+- [PyData Community Tutorial Collection](https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html) 
 
-# Important Information
-- [Final Project Requirements](https://docs.google.com/document/d/1vAZZEyWVb0oAQ31c-8USyug_bGppjEJchA9mk5Q4TYg/edit?usp=sharing)
+# Useful Information
+- [Matplotlib Cheatsheet](http://qmisr.github.io/mis492/isom230/Python_Matplotlib_Cheat_Sheet.pdf)
+- [Seaborn Cheatsheet](http://qmisr.github.io/mis492/isom230/seaborn_cheat_sheet.pdf)
 - [How to publish your slides](http://qmisr.github.io/mis492/spring2018/slides.pdf)
-- Tips on using tweepy [Notebook](http://qmisr.github.io/mis492/spring2018/tweeps_tips.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/tweeps_tips.ipynb)
+- Tips on using tweepy to collect data from twitter [Notebook](http://qmisr.github.io/mis492/spring2018/tweeps_tips.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/qmisr/mis492/master?filepath=spring2018/tweeps_tips.ipynb)
 
-# Special thanks
-to Datacamp.com for providing the online content free to our students which they utilized to learn more about advanced topics such as NLP and ML to apply in their projects.
-
-## Past Courses
+## Previous Data Visualization Courses
 - [Fall 2017](http://qmisr.github.io/mis492/fall2017.html)
+- [Spring 2018](http://qmisr.github.io/mis492/spring2018.html)
