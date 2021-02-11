@@ -6,7 +6,7 @@ You are required to build an application to analyze the tweets for a popular tre
  
 - Application should include at least 5 keywords or hashtags in which the tweets and data to be analyzed is downloaded and stored on file. Each keyword or hashtag must store all information related to at least 400 tweets.
 - Application should present the user with keywords or hashtags that have been analyzed and allow the user to view the analysis.
-### For All Tweets in Your Sample
+## For All Tweets in Your Sample
 - Find the names of the top people posting in the sample
   - For the people in the list, provide the option to view a report on each person where the following information is provided:
     - Total tweets included in our sample for that person
@@ -20,18 +20,18 @@ You are required to build an application to analyze the tweets for a popular tre
 - Count the number of mentions @ and hashtags # in all tweets
 - Count the number of URLs posted in the sample
 - For all tweets, find the top ten people with most followers in the sample
-### Plots Within A Sample
+## Plots Within a Sample
 - Plot number of tweets (y axis) by hour of the day (x Axis), remember you have 24 hours
 - Plot number of retweets (y-axis) by number of words in tweet (x-axis)
 - Plot a box plot for the number of words in all tweets
 - Plot a box plot for number of retweets in all tweets
 - Plot box plot for number of like in all tweets
-### Plots Across Sample (To compare the hastags and keywords)
+## Plots Across Sample (To compare the hastags and keywords)
 - Compare the average words
 - Compare total likes 
 - Compare total retweets
 - Compare maximum followers for poster on hashtag or keyword
-### Bonus Requirements
+## Bonus Requirements
 - Application should allow the user to enter a new hashtag where the application can download the tweets and store them on file. After completetion, the keyword or hashtag is made available with the list of available tweets and hashtags for analysis by the applciation 
 - Count the words used in the text of all tweets and find the top ten frequently used words. Once you find the list, try to exclude the stop words that are known to be used frequently by everyone (e.g. for, is, am, with, حروف الجر والعطف)
   - *Tip:* You will need to use string split and count individual words from all tweets
