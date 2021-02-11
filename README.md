@@ -13,7 +13,7 @@
 
 # Final Project
 - [Option 1 - Twitter Analysis](./isom230/project.md)
-- Option 2 - World Bank Data Analysis: Coming soon ....
+- [Option 2 - World Bank Data Analysis](./isom230/project2.md)
 
 # Other Important Pandas Tutorials
 - [PyData Pandas Introduction](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html#intro-to-pandas)  _**Highly recommended, complete the introduction steps**_
