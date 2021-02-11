@@ -10,6 +10,9 @@
 | 2 | Exploratory Data Analysis | [notebook](http://malmarz.github.io/pandas/isom230/mod2.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/malmarz/pandas/master?filepath=isom230/mod2.ipynb)
 | 3 | Pandas | [notebook](http://malmarz.github.io/pandas/isom230/mod3.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/malmarz/pandas/master?filepath=isom230/mod3.ipynb)
 | 4 | Data Visualization | [notebook](http://malmarz.github.io/pandas/isom230/mod4.ipynb) - [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/malmarz/pandas/master?filepath=isom230/mod4.ipynb)
+# Final Project
+- [Option 1 - Twitter Analysis](./isom230/project.md)
+- Option 2 - World Bank Data Analysis: Coming soon ....
 
 # Other Important Pandas Tutorials
 - [PyData Pandas Introduction](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html#intro-to-pandas)  _**Highly recommended, complete the introduction steps**_
