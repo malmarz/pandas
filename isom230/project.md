@@ -20,23 +20,31 @@ You are required to build an application to analyze the tweets for a popular tre
 - Count the number of mentions @ and hashtags # in all tweets
 - Count the number of URLs posted in the sample
 - For all tweets, find the top ten people with most followers in the sample
+
+
 ## Plots Within a Sample
 - Plot number of tweets (y axis) by hour of the day (x Axis), remember you have 24 hours
 - Plot number of retweets (y-axis) by number of words in tweet (x-axis)
 - Plot a box plot for the number of words in all tweets
 - Plot a box plot for number of retweets in all tweets
 - Plot box plot for number of like in all tweets
+
+
 ## Plots Across Sample (To compare the hastags and keywords)
 - Compare the average words
 - Compare total likes 
 - Compare total retweets
 - Compare maximum followers for poster on hashtag or keyword
+
+
 ## Bonus Requirements
 - Application should allow the user to enter a new hashtag where the application can download the tweets and store them on file. After completetion, the keyword or hashtag is made available with the list of available tweets and hashtags for analysis by the applciation 
 - Count the words used in the text of all tweets and find the top ten frequently used words. Once you find the list, try to exclude the stop words that are known to be used frequently by everyone (e.g. for, is, am, with, حروف الجر والعطف)
   - *Tip:* You will need to use string split and count individual words from all tweets
 - When counting the URLs, try to find the top ten domain that were linked to, for example, www.google.com/search?q=something, the domain is the google.com part in this URL.
 - Find other ways to improve the application by including more plots and analysis that you think are interesting.
+  
+
 ## Grading
 - Grade for current requirements is 80% only of total grade for the project. You must find ways to improve the project to get the full 100%.
 - You can attempt to complete some of the bonus requirements or suggest your own improvement to reach the 100% grade.
@@ -46,8 +54,9 @@ You are required to build an application to analyze the tweets for a popular tre
   - In the final project you will demonstrate the application that will display your findings on the last week of classes.
   - If you fail to build the application to demonstrate your findings, you should demonstrate your analysis directly from the notebook. Make sure your notebook is well organized. There will be a 20% penalty for not completing the application which you can offset by doing more analysis.
   
-  
-
+## Useful Resources
+- [Getting Twitter Data Using Python](https://www.earthdatascience.org/courses/use-data-open-source-python/intro-to-apis/twitter-data-in-python/)
+- [Notebook with examples on how to Fetch Data Using Tweepy](http://malmarz.github.io/pandas/spring2018/tweeps_tips.ipynb)
 
 ## Final Tip
 Time is short, start today with your project!
