@@ -16,6 +16,9 @@
 - [Option 1 - Twitter Analysis](./isom230/project.md)
 - [Option 2 - World Bank Data Analysis](./isom230/project2.md)
 
+[Evaluation Criteria for Final Project Phases](./isom230/eval_final.md)
+
+
 # Other Important Pandas Tutorials
 - [PyData Pandas Introduction](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html#intro-to-pandas)  _**Highly recommended, complete the introduction steps**_
 - [Greg Reda's 3-part Pandas Inroduction](https://gregreda.com/2013/10/26/intro-to-pandas-data-structures/)
