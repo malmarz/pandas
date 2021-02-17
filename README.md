@@ -18,6 +18,13 @@
 
 [Evaluation Criteria for Final Project Phases](./isom230/eval_final.md)
 
+# Tips on Twitter
+- Tips on using tweepy to collect data from twitter [Notebook](http://malmarz.github.io/pandas/spring2018/tweeps_tips.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/malmarz/pandas/master?filepath=spring2018/tweeps_tips.ipynb)
+    - Try to imitate the code to ftch and store tweets or user data as a dataframe 
+- To know what information is available in a tweet from tweepy look at the following pages:
+    - [for user data](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/object-model/user)
+    - [for tweet data](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/object-model/tweet)
+    
 
 # Other Important Pandas Tutorials
 - [PyData Pandas Introduction](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html#intro-to-pandas)  _**Highly recommended, complete the introduction steps**_
@@ -27,7 +34,7 @@
 # Useful Information
 - [Matplotlib Cheatsheet](http://malmarz.github.io/pandas/isom230/Python_Matplotlib_Cheat_Sheet.pdf)
 - [Seaborn Cheatsheet](http://malmarz.github.io/pandas/isom230/seaborn_cheat_sheet.pdf)
-- Tips on using tweepy to collect data from twitter [Notebook](http://malmarz.github.io/pandas/spring2018/tweeps_tips.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/malmarz/pandas/master?filepath=spring2018/tweeps_tips.ipynb)
+
 
 ## Previous Data Visualization Courses
 - [Fall 2017](http://malmarz.github.io/pandas/fall2017.html)
