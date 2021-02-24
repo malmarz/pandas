@@ -15,6 +15,7 @@
 # Final Project
 - [Option 1 - Twitter Analysis](./isom230/project.md)
 - [Option 2 - World Bank Data Analysis](./isom230/project2.md)
+- [Option 3 - Country Data (Partial Credit)](./isom230/project3.md) | Download [the prepare data set](./isom230/final_project_data.csv)
 
 [Evaluation Criteria for Final Project Phases](./isom230/eval_final.md)
 
