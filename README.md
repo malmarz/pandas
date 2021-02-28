@@ -19,6 +19,9 @@
 
 [Evaluation Criteria for Final Project Phases](./isom230/eval_final.md)
 
+
+[Updated Evaluation Criteria for Final Project Phases](./isom230/new_eval_final.md)
+
 # Tips on Twitter
 - Tips on using tweepy to collect data from twitter [Notebook](http://malmarz.github.io/pandas/spring2018/tweeps_tips.ipynb) [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/malmarz/pandas/master?filepath=spring2018/tweeps_tips.ipynb)
     - Try to imitate the code to ftch and store tweets or user data as a dataframe 
